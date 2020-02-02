@@ -1,0 +1,29 @@
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{category_id==0?'text-green cur':''}}" bindtap="categoryTap" data-id="0">
+    全部
+  </view>
+  <view class="cu-item {{category_id==item.id?'text-green cur':''}}" wx:key wx:for="{{categories}}" bindtap="categoryTap" data-id="{{item.id}}">
+    {{item.name}}
+  </view>
+</scroll-view>
+
+<view class="cu-card case shadow shadow-lg" wx:key wx:for="{{courses}}" bindTap="goCourseInfo">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="{{item.thumb}}" mode="widthFix"></image>
+    </view>
+    <view class="cu-list">
+      <view class="flex padding">
+        <view class="flex-treble text-xl">{{item.title}}</view>
+        <view class="flex-sub text-right">
+          <text wx:if="{{item.charge > 0}}" class="text-price text-xxl text-red">{{item.charge}}</text>
+          <text wx:else class="text-green text-xl">免费</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-load loading margin-xl" wx:if="{{loadMoreStatus}}"></view>
+<view class="cu-load over margin-xl" wx:if="{{loadMore === false}}"></view>
