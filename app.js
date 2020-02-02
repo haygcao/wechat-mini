@@ -11,6 +11,6 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    AppName: '我是应用名'
   }
 })
