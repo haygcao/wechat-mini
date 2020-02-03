@@ -23,10 +23,6 @@ export default function instance(params) {
         if (res.data.code === 0) {
           resolve((res.data && res.data.data) || {})
         } else {
-          wx.showToast({
-            icon: 'none',
-            title: res.data.message || '未知错误'
-          })
           reject(res.data)
         }
       },

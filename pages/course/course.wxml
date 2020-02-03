@@ -1,5 +1,4 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="backText">返回</view>
   <view slot="content">课程详情</view>
 </cu-custom>
 
@@ -39,7 +38,7 @@
 
   <block wx:else>
     <view wx:for="{{chapters}}" wx:key="id" wx:for-item="item1">
-      <view class="padding-top-sm padding-bottom-sm bg-black text-white">
+      <view class="padding-top-sm padding-bottom-sm bg-grey text-white">
       <text class="margin-left-sm">{{item1.title}}</text>
       </view>
       <navigator wx:for="{{videos[item1.id]}}" wx:key="id" wx:for-item="item2" url="../video/video?id={{item2.id}}" open-type="navigate">

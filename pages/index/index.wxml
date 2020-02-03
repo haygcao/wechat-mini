@@ -11,7 +11,7 @@
   </view>
 </scroll-view>
 
-<navigator wx:key wx:for="{{courses}}" url="../course/course?id={{item.id}}" open-type="navigate">
+<navigator wx:key wx:for="{{courses}}" hover-class="none" url="../course/course?id={{item.id}}" open-type="navigate">
   <view class="cu-card case shadow shadow-lg">
     <view class="cu-item shadow">
       <view class="image">

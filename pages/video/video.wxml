@@ -1,5 +1,4 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="backText">返回</view>
   <view slot="content">视频播放</view>
 </cu-custom>
 
@@ -11,21 +10,25 @@
 
 <view class="bg-white margin-top-lg">
   <block wx:if="{{chapters.length === 0}}">
-    <view wx:key="id" wx:for="{{videos[0]}}" bindtap="switchVideo" data-id="{{item.id}}" class="solid-bottom padding-lg {{item.id === video.id ? 'bg-grey' : ''}}">
-      <text>{{item.title}}</text>
-      <text style="float: right">{{item.duration}}s</text>
-    </view>
+    <navigator wx:key="id" wx:for="{{videos[0]}}" hover-class="none" url="video?id={{item.id}}" open-type="redirect">
+      <view class="solid-bottom padding-lg {{item.id === video.id ? 'text-blue' : ''}}">
+        <text>{{item.title}}</text>
+        <text style="float: right">{{item.duration}}s</text>
+      </view>
+    </navigator>
   </block>
 
   <block wx:else>
     <view wx:for="{{chapters}}" wx:key="id" wx:for-item="item1">
-      <view class="padding-top-sm padding-bottom-sm bg-black text-white">
+      <view class="padding-top-sm padding-bottom-sm bg-grey text-white">
         <text class="margin-left-sm">{{item1.title}}</text>
       </view>
-      <view wx:for="{{videos[item1.id]}}" wx:key="id" wx:for-item="item2"  bindtap="switchVideo" data-id="{{item2.id}}" class="padding-lg solid-bottom {{item2.id === video.id ? 'bg-grey' : ''}}">
-        <text>{{item2.title}}</text>
-        <text style="float: right">{{item2.duration}}s</text>
-      </view>
+      <navigator wx:key="id" wx:for="{{videos[item1.id]}}" wx:for-item="item2" hover-class="none" url="video?id={{item2.id}}" open-type="redirect">
+        <view class="padding-lg solid-bottom {{item2.id === video.id ? 'text-blue' : ''}}">
+          <text>{{item2.title}}</text>
+          <text style="float: right">{{item2.duration}}s</text>
+        </view>
+      </navigator>
     </view>
   </block>
 </view>

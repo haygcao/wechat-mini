@@ -10,15 +10,10 @@ Page({
     chapters: [],
     videos: [],
     palyInfo: {
-      url: 'https://player.alicdn.com/video/aliyunmedia.mp4',
+      url: '',
       duration: '',
       format: ''
     }
-  },
-
-  switchVideo(e) {
-    var id = e.currentTarget.dataset.id;
-    this.getVideo(id);
   },
 
   /**
@@ -26,6 +21,7 @@ Page({
    */
   onLoad: function(options) {
     this.getVideo(options.id);
+    this.getVideoPlayInfo(options.id);
   },
 
   getVideo(id) {
@@ -34,6 +30,21 @@ Page({
         video: res.video,
         videos: res.videos,
         chapters: res.chapters,
+      });
+    })
+  },
+
+  getVideoPlayInfo(id) {
+    this.setData({
+      palyInfo: {
+        url: '',
+        duration: '',
+        format: ''
+      }
+    });
+    Api.video.getVideoUrl(id).then(res => {
+      this.setData({
+        palyInfo: res.urls[0]
       });
     })
   },
