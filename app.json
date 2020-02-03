@@ -6,7 +6,9 @@
     "pages/video/video",
     "pages/member/member",
     "pages/login/login",
-    "pages/vip/vip"
+    "pages/vip/vip",
+    "pages/mall/course",
+    "pages/mall/role"
   ],
   "window": {
     "backgroundTextStyle": "light",
