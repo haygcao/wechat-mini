@@ -31,7 +31,24 @@ Page({
         url: '/pages/login/login'
       })
       return;
-    }    
+    }
+    Api.order.createCourseOrder(this.data.course.id, 0).then(res => {
+      // 请求支付订单
+      Api.order.payment(res.order_id).then(res => {
+        // 发起支付
+        console.log(res);
+      }).catch(e => {
+        wx.showToast({
+          icon: 'none',
+          title: e || '系统错误'
+        });
+      });
+    }).catch(e => {
+      wx.showToast({
+        icon: 'none',
+        title: e || '系统错误'
+      });
+    });
   },
 
   /**

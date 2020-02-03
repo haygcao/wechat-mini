@@ -1,4 +1,4 @@
-const baseUrl = 'https://demo.meedu.vip' //'https://58hualong.com' //
+const baseUrl = 'http://127.0.0.1:8000' //'https://58hualong.com' //
 
 export default function instance(params) {
   return new Promise((resolve, reject) => {

@@ -2,11 +2,17 @@
   <view slot="content">VIP</view>
 </cu-custom>
 
-<view class="cu-list menu margin-top">
-  <view class="cu-item" wx:for="{{roles}}">
-    <navigator class="content" hover-class="none" url="../mall/role?id={{item.id}}" open-type="navigate">
-      <text>{{item.name}}</text>
-      <text style="float: right" class="text-price text-red">{{item.charge}}</text>
-    </navigator>
-  </view>
+<view class="margin-top bg-white padding-left padding-right padding-top-lg">
+  <navigator wx:for="{{roles}}" wx:for-item="item" class="content" hover-class="none" url="../mall/role?id={{item.id}}" open-type="navigate">
+    <view class="padding-bottom-lg solid-bottom">
+      <view style="line-height: 30px;">
+        <text>{{item.name}}</text>
+        <text style="float: right" class="text-price text-red">{{item.charge}}</text>
+      </view>
+
+      <view wx:for="{{item.desc_rows}}" wx:for-item="item2" wx:key="id">
+        <text class="text-grey">{{item2}}</text>
+      </view>
+    </view>
+  </navigator>
 </view>

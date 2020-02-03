@@ -1,2 +1,27 @@
-<!--pages/mall/role.wxml-->
-<text>pages/mall/role.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">订阅VIP</view>
+</cu-custom>
+
+<view class="padding-left padding-right bg-white margin-top-lg">
+  <view class="padding-bottom-lg padding-top-lg solid-bottom">
+    <view><text class="text-xl">{{role.name}}</text></view>
+    <view wx:for="{{role.desc_rows}}" wx:key="id"><text class="text-grey">{{item}}</text></view>
+  </view>
+  <view class="padding-bottom-lg padding-top-lg solid-bottom">
+    <text class="text-xl">总价</text>
+    <text style="float: right" class="text-red text-xl">￥{{role.charge}}</text>
+  </view>
+  <view class="padding-bottom-lg padding-top-lg solid-bottom">
+    <text class="text-xl">折扣</text>
+    <text style="float: right" class="text-red text-xl">-0</text>
+  </view>
+  <view class="padding-bottom-lg padding-top-lg solid-bottom">
+    <text class="text-xl">现价</text>
+    <text style="float: right" class="text-red text-xl">￥{{role.charge}}</text>
+  </view>
+</view>
+
+<view class="flex" style="margin-bottom: 60px;"></view>
+<view style="position: fixed; z-index: 10; bottom: 0px; width: 100%; height: 54px;" class="bg-blue text-center" bindtap="createOrder">
+  <text style="line-height: 54px; font-size: 18px;">提交订单</text>
+</view>

@@ -5,3 +5,9 @@ export function list() {
     url: `/api/v2/roles`
   })
 }
+
+export function info(id) {
+  return instance({
+    url: `/api/v2/role/${id}`
+  })
+}

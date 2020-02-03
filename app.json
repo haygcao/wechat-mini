@@ -8,7 +8,11 @@
     "pages/login/login",
     "pages/vip/vip",
     "pages/mall/course",
-    "pages/mall/role"
+    "pages/mall/role",
+    "pages/member/order",
+    "pages/member/course",
+    "pages/member/vip",
+    "pages/member/invite"
   ],
   "window": {
     "backgroundTextStyle": "light",
