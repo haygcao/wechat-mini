@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/course/course",
-    "pages/video/video"
+    "pages/video/video",
+    "pages/member/member",
+    "pages/login/login",
+    "pages/vip/vip"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,5 +19,29 @@
     "cu-custom": "/colorui/components/cu-custom"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#8799a3",
+    "selectedColor": "#0081ff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icons/dashboard.png",
+        "selectedIconPath": "images/icons/dashboard-active.png"
+      },
+      {
+        "pagePath": "pages/vip/vip",
+        "text": "VIP",
+        "iconPath": "images/icons/vip.png",
+        "selectedIconPath": "images/icons/vip-active.png"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "我的",
+        "iconPath": "images/icons/member.png",
+        "selectedIconPath": "images/icons/member-active.png"
+      }
+    ]
+  }
 }

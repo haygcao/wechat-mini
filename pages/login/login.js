@@ -1,0 +1,155 @@
+const Api = require('../../api/index');
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    mobile: '',
+    sms_code: '',
+    image_captcha: '',
+    password: '',
+    loginType: 'sms',
+    image: {
+      img: '',
+      key: ''
+    },
+    sms_expire: 60,
+    sms_loading: false,
+    sms_expire_seconds: 60
+  },
+
+  switchLogin(e) {
+    this.setData({
+      loginType: e.currentTarget.dataset.id,
+    });
+  },
+
+  switchCaptchaImage() {
+    this.getCaptcha();
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    this.getCaptcha();
+  },
+
+  getCaptcha() {
+    Api.user.captchaImage().then(res => {
+      this.setData({
+        image: {
+          img: res.img,
+          key: res.key
+        }
+      });
+    });
+  },
+
+  submitLogin() {
+    if (this.data.mobile.length !== 11) {
+      return;
+    }
+    if (this.data.loginType === 'sms') {
+      if (this.data.sms_code.length === 0) {
+        return;
+      }
+      Api.user.mobileLogin({
+        mobile: this.data.mobile,
+        mobile_code: this.data.sms_code,
+      }).then(res => {
+        console.log(res);
+      })
+    } else {
+      if (this.data.password.length === 0) {
+        return;
+      }
+
+      Api.user.passwordLogin({
+        mobile: this.data.mobile,
+        password: this.data.password
+      }).then(res => {
+        console.log(res);
+      })
+    }
+  },
+
+  sendSmsCode() {
+    console.log(this.data);
+    if (this.data.mobile.length === 0 || this.data.image_captcha.length === 0 || this.data.sms_loading === true) {
+      return;
+    }
+    this.sms_expire_seconds = this.sms_expire;
+    this.setData({
+      sms_expire_seconds: this.sms_expire,
+    });
+    Api.user.captchaSms({
+      mobile: this.data.mobile,
+      mobile_code: '123',
+      image_captcha: this.data.image_captcha,
+      image_key: this.data.image.key,
+      scene: 'login'
+    }).then(res => {
+      console.log(res);
+    })
+  },
+
+  inputBind(e) {
+    let name = e.currentTarget.dataset.name;
+    let v = e.detail.value;
+    let obj = {};
+    obj[name] = v;
+    this.setData(obj);
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
+  }
+})

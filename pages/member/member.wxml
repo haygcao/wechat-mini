@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">会员中心</view>
+</cu-custom>
+
+<view class="bg-white padding text-center">
+  <block wx:if="{{user.avatar.length > 0}}">
+    <view class="cu-avatar xl round margin-left" style="background-image:url({{user.avatar}});"></view>
+    <view class="text-center">{{user.nickname}}</view>
+  </block>
+  <block wx:else>
+    <view class="padding-left text-left">
+      <navigator url="../login/login" open-type="navigate">
+        <text class="text-xl padding-top padding-bottom">请先登录</text>
+      </navigator>
+    </view>
+  </block>
+</view>
+
+<view class="cu-list menu margin-top">
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+      <text class="cuIcon-video lg text-gray"></text>
+      <text class="text-grey">我的课程</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+      <text class="cuIcon-vip lg text-gray"></text>
+      <text class="text-grey">我的VIP</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+      <text class="cuIcon-cart lg text-gray"></text>
+      <text class="text-grey">我的订单</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+      <text class="cuIcon-share lg text-gray"></text>
+      <text class="text-grey">邀请用户</text>
+    </navigator>
+  </view>
+</view>
+
+<view class="cu-list menu margin-top">
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+      <text class="cuIcon-refresh lg text-gray"></text>
+      <text class="text-grey">切换账号</text>
+    </navigator>
+  </view>
+</view>
