@@ -1,4 +1,4 @@
-const Api = require('../../api/index')
+const Api = require('../../api/index');
 
 Page({
 

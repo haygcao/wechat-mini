@@ -1,3 +1,5 @@
+<wxs module="utils" src="../../wxs/utils.wxs"></wxs>
+
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">课程详情</view>
 </cu-custom>
@@ -28,10 +30,10 @@
 <view class="bg-white" wx:if="{{TabCur === 'menu'}}">
 
   <block wx:if="{{chapters.length === 0}}">
-    <navigator wx:key wx:for="{{videos[0]}}" url="../video/video?id={{item.id}}" open-type="navigate">
+    <navigator wx:key="id" wx:for="{{videos[0]}}" url="../video/video?id={{item.id}}" open-type="navigate">
       <view class="solid-bottom padding-lg">
         <text>{{item.title}}</text>
-        <text style="float: right">{{item.duration}}s</text>
+        <text style="float: right">{{utils.durationForHuman(item.duration)}}</text>
       </view>
     </navigator>
   </block>
@@ -44,7 +46,7 @@
       <navigator wx:for="{{videos[item1.id]}}" wx:key="id" wx:for-item="item2" url="../video/video?id={{item2.id}}" open-type="navigate">
         <view class="padding-lg solid-bottom">
           <text>{{item2.title}}</text>
-          <text style="float: right">{{item2.duration}}s</text>
+          <text style="float: right">{{utils.durationForHuman(item2.duration)}}</text>
         </view>
       </navigator>
     </view>
