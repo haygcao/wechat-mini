@@ -31,6 +31,16 @@ Page({
         videos: res.videos,
         chapters: res.chapters,
       });
+
+      this.getCourse(this.data.video.course_id);
+    })
+  },
+
+  getCourse(id) {
+    Api.course.getCourseInfo(id).then(res => {
+      this.setData({
+        course: res.course,
+      });
     })
   },
 

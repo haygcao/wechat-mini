@@ -39,7 +39,7 @@
   <block wx:else>
     <view wx:for="{{chapters}}" wx:key="id" wx:for-item="item1">
       <view class="padding-top-sm padding-bottom-sm bg-grey text-white">
-      <text class="margin-left-sm">{{item1.title}}</text>
+        <text class="margin-left-sm">{{item1.title}}</text>
       </view>
       <navigator wx:for="{{videos[item1.id]}}" wx:key="id" wx:for-item="item2" url="../video/video?id={{item2.id}}" open-type="navigate">
         <view class="padding-lg solid-bottom">
@@ -51,3 +51,11 @@
   </block>
 
 </view>
+
+<view class="flex" style="margin-bottom: 50px;"></view>
+
+<navigator url="../mall/course?id={{course.id}}" open-type="navigate">
+  <view style="position: fixed; z-index: 10; bottom: 0px; width: 100%; height: 44px;" class="bg-blue text-center">
+    <text style="line-height: 44px; font-size: 18px;">订阅课程 ￥{{course.charge}}</text>
+  </view>
+</navigator>
