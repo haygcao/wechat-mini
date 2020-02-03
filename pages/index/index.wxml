@@ -6,12 +6,12 @@
   <view class="cu-item {{category_id==0?'text-blue cur':''}}" bindtap="categoryTap" data-id="0">
     全部
   </view>
-  <view class="cu-item {{category_id==item.id?'text-blue cur':''}}" wx:key wx:for="{{categories}}" bindtap="categoryTap" data-id="{{item.id}}">
+  <view class="cu-item {{category_id==item.id?'text-blue cur':''}}" wx:key="id" wx:for="{{categories}}" bindtap="categoryTap" data-id="{{item.id}}">
     {{item.name}}
   </view>
 </scroll-view>
 
-<navigator wx:key wx:for="{{courses}}" hover-class="none" url="../course/course?id={{item.id}}" open-type="navigate">
+<navigator wx:key="id" wx:for="{{courses}}" hover-class="none" url="../course/course?id={{item.id}}" open-type="navigate">
   <view class="cu-card case shadow shadow-lg">
     <view class="cu-item shadow">
       <view class="image">

@@ -1,18 +1,53 @@
-// pages/member/course.js
+const Api = require('../../api/index.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    courses: [],
+    page: 1,
+    pageSize: 5,
+    loadMore: true,
+    loadMoreStatus: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getCourses(true);
+  },
 
+  getCourses(refresh) {
+    if (refresh) {
+      this.setData({
+        courses: [],
+        page: 1
+      });
+    }
+    Api.user.getUserCourses({
+      page: this.data.page,
+      page_size: this.data.pageSize
+    }).then(res => {
+      console.log(res);
+      this.setData({
+        loadMoreStatus: false,
+      });
+      if (res.data.length === 0) {
+        this.setData({
+          loadMore: false
+        });
+      }
+      var data = this.data.courses;
+      res.data.forEach(item => {
+        data.push(item);
+      });
+      this.setData({
+        courses: data
+      });
+    })
   },
 
   /**

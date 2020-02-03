@@ -36,7 +36,26 @@ Page({
       // 请求支付订单
       Api.order.payment(res.order_id).then(res => {
         // 发起支付
-        console.log(res);
+        wx.requestPayment({
+          timeStamp: res.timeStamp,
+          nonceStr: res.nonceStr,
+          package: res.package,
+          signType: res.signType,
+          paySign: res.paySign,
+          success: res => {
+            wx.showToast({
+              icon: 'none',
+              title: '支付成功'
+            });
+            wx.navigateBack({})
+          },
+          fail(res) {
+            wx.showToast({
+              icon: 'none',
+              title: '取消支付'
+            });
+          }
+        })
       }).catch(e => {
         wx.showToast({
           icon: 'none',

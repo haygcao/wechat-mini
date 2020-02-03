@@ -51,3 +51,11 @@ export function getUserRoles(data) {
         data: data
     })
 }
+
+
+export function getUserCourses(data) {
+  return instance({
+    url: '/api/v2/member/courses',
+    data: data
+  })
+}

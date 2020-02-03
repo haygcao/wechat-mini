@@ -1,2 +1,6 @@
-<!--pages/member/course.wxml-->
-<text>pages/member/course.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">我的课程</view>
+</cu-custom>
+
+
+
