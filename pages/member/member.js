@@ -1,4 +1,5 @@
-// pages/member/member.js
+const Api = require('../../api/index')
+
 Page({
 
   /**
@@ -7,7 +8,7 @@ Page({
   data: {
     user: {
       avatar: '',
-      nickname: ''
+      nick_name: ''
     }
   },
 
@@ -15,7 +16,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let token = wx.getStorageSync('access_token');
+    if (token) {
+      Api.user.getUserInfo().then(res => {
+        this.setData({
+          user: res,
+        });
+      });
+    }
   },
 
   /**

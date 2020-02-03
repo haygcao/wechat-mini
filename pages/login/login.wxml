@@ -21,8 +21,9 @@
       <text class="text-gray">短信验证码</text>
       <input type="number" class="text-xl" value="{{sms_code}}" bindinput="inputBind" data-name="sms_code" />
     </view>
-    <view class="text-right">
-      <text class="text-blue text-xl" bindtap="sendSmsCode">发送验证码</text>
+    <view class="text-right" bindtap="sendSmsCode">
+      <text class="text-blue text-xl" wx:if="{{sms_loading === false}}">发送验证码</text>
+      <text class="text-blue text-xl" wx:else>{{sms_expire_seconds}}s</text>
     </view>
   </view>
   <view class="flex flex-direction padding">

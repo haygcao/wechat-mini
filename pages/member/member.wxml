@@ -1,11 +1,11 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
   <view slot="content">会员中心</view>
 </cu-custom>
 
 <view class="bg-white padding text-center">
   <block wx:if="{{user.avatar.length > 0}}">
     <view class="cu-avatar xl round margin-left" style="background-image:url({{user.avatar}});"></view>
-    <view class="text-center">{{user.nickname}}</view>
+    <view class="padding-lg text-xl">{{user.nick_name}}</view>
   </block>
   <block wx:else>
     <view class="padding-left text-left">
@@ -45,7 +45,7 @@
 
 <view class="cu-list menu margin-top">
   <view class="cu-item arrow">
-    <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+    <navigator class="content" hover-class="none" url="../login/login" open-type="navigate">
       <text class="cuIcon-refresh lg text-gray"></text>
       <text class="text-grey">切换账号</text>
     </navigator>
