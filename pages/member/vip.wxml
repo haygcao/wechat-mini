@@ -1,2 +1,19 @@
-<!--pages/member/vip.wxml-->
-<text>pages/member/vip.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">我的VIP</view>
+</cu-custom>
+
+<view class="margin-top-lg bg-white padding text-xl">
+  <block wx:if="user.role">
+    <view>
+      <text>当前会员：{{user.role.name}}</text>
+    </view>
+    <view>
+      <text>到期时间：{{user.role_expired_at}}</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view>
+      <text>暂无会员</text>
+    </view>
+  </block>
+</view>

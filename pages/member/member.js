@@ -16,14 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let token = wx.getStorageSync('access_token');
-    if (token) {
-      Api.user.getUserInfo().then(res => {
-        this.setData({
-          user: res,
-        });
-      });
-    }
   },
 
   /**
@@ -37,14 +29,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let token = wx.getStorageSync('access_token');
+    if (token) {
+      Api.user.getUserInfo().then(res => {
+        this.setData({
+          user: res,
+        });
+      });
+    }
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
