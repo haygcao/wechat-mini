@@ -59,3 +59,25 @@ export function getUserCourses(data) {
     data: data
   })
 }
+
+export function getPromoCode() {
+  return instance({
+    url: '/api/v2/member/promoCode',
+    data: {}
+  })
+}
+
+export function createPromoCode() {
+  return instance({
+    method: 'POST',
+    url: '/api/v2/member/promoCode',
+    data: {}
+  })
+}
+
+export function getInviteBalanceRecrods(data) {
+  return instance({
+    url: '/api/v2/member/inviteBalanceRecrods',
+    data: data
+  })
+}

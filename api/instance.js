@@ -21,9 +21,9 @@ export default function instance(params) {
           return;
         }
         if (res.data.code === 0) {
-          resolve((res.data && res.data.data) || {})
+          resolve(res.data.data || {})
         } else {
-          reject(res.data)
+          reject(res.data.message)
         }
       },
       fail(err) {
