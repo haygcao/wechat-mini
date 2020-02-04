@@ -96,6 +96,7 @@ Page({
       image_key: this.data.image.key,
       scene: 'login'
     }).then(res => {
+
       this.setData({
         sms_loading: true
       });
@@ -112,6 +113,13 @@ Page({
           return;
         }
       }, 100);
+
+    }).catch(e => {
+      this.getCaptcha();
+      wx.showToast({
+        icon: 'none',
+        title: e
+      });
     })
   },
 
