@@ -1,2 +1,3 @@
-<!--pages/member/invite.wxml-->
-<text>pages/member/invite.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">邀请</view>
+</cu-custom>

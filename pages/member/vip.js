@@ -13,7 +13,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    if (!wx.getStorageSync('access_token')) {
+      wx.redirectTo({
+        url: '/pages/login/login',
+      })
+      return;
+    }
+    Api.user.getUserInfo().then(res => {
+      this.setData({ user: res });
+    })
   },
 
   /**
@@ -27,9 +35,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    Api.user.getUserInfo().then(res => {
-      this.setData({ user: res });
-    })
+    
   },
 
   /**
