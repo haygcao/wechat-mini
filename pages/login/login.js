@@ -88,29 +88,7 @@ Page({
       sms_expire_seconds: this.data.sms_expire,
     });
     var timeoutHandler = null;
-
-    this.setData({
-      sms_loading: true
-    });
-    timeoutHandler = setInterval(() => {
-      if (this.data.sms_loading !== true) {
-        return;
-      }
-      let s = this.data.sms_expire_seconds - 1;
-      this.setData({
-        sms_expire_seconds: s
-      });
-      if (s <= 0) {
-        clearInterval(timeoutHandler);
-        this.setData({
-          sms_loading: false
-        });
-        return;
-      }
-    }, 1000);
-
-    return;
-
+    
     Api.user.captchaSms({
       mobile: this.data.mobile,
       mobile_code: '123',
@@ -118,6 +96,9 @@ Page({
       image_key: this.data.image.key,
       scene: 'login'
     }).then(res => {
+      this.setData({
+        sms_loading: true
+      });
       timeoutHandler = setInterval(function() {
         if (this.data.sms_loading !== true) {
           return;

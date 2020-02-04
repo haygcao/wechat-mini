@@ -37,7 +37,7 @@
   </view>
 </view>
 
-<view class="cu-list menu margin-top" wx:if="{{token !== ''}}">
+<view class="cu-list menu margin-top" wx:if="{{token}}">
   <view class="cu-item arrow">
     <navigator class="content" hover-class="none" url="../login/login" open-type="navigate">
       <text class="cuIcon-refresh lg text-gray"></text>
