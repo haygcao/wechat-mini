@@ -76,7 +76,12 @@ Page({
         wx.switchTab({
           url: '/pages/member/member'
         })
-      })
+      }).catch(e => {
+        wx.showToast({
+          icon: 'none',
+          title: e
+        });
+      });
     }
   },
 
