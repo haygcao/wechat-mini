@@ -31,7 +31,6 @@ Page({
       page: this.data.page,
       page_size: this.data.pageSize
     }).then(res => {
-      console.log(res);
       this.setData({
         loadMoreStatus: false,
       });
@@ -78,18 +77,24 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh() {
+    this.setData({
+      page: 1,
+    });
+    this.getCourses(true);
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  
+  onReachBottom() {
+    if (this.data.loadMore === false) {
+      return;
+    }
+    this.setData({
+      loadMoreStatus: true,
+    })
+    this.setData({
+      page: this.data.page + 1,
+    });
+    this.getCourses(false);
   },
 
   /**

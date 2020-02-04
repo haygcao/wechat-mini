@@ -2,5 +2,20 @@
   <view slot="content">我的课程</view>
 </cu-custom>
 
+<navigator wx:key="id" wx:for="{{courses}}" hover-class="none" url="../course/course?id={{item.id}}" open-type="navigate">
+  <view class="cu-card case shadow shadow-lg">
+    <view class="cu-item shadow">
+      <view class="image">
+        <image src="{{item.thumb}}" mode="widthFix"></image>
+      </view>
+      <view class="cu-list">
+        <view class="flex padding">
+          <view class="flex-treble text-xl">{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</navigator>
 
-
+<view class="cu-load loading margin-xl" wx:if="{{loadMoreStatus}}"></view>
+<view class="cu-load over margin-xl" wx:if="{{loadMore === false}}"></view>
