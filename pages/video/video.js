@@ -20,6 +20,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    if (wx.getStorageSync('access_token') === '') {
+      wx.redirectTo({
+        url: '/pages/login/login',
+      })
+      return;
+    }
     this.getVideo(options.id);
     this.getVideoPlayInfo(options.id);
   },
@@ -70,7 +76,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
   },
 
   /**
