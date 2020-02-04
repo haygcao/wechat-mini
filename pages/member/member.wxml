@@ -9,7 +9,7 @@
   </block>
   <block wx:else>
     <view class="padding-left text-left">
-      <navigator url="../login/login" open-type="navigate">
+      <navigator url="../login/login" open-type="navigate" hover-class="none">
         <text class="text-xl padding-top padding-bottom">请先登录</text>
       </navigator>
     </view>
@@ -18,26 +18,26 @@
 
 <view class="cu-list menu margin-top">
   <view class="cu-item arrow">
-    <navigator class="content" hover-class="none" url="course" open-type="redirect">
+    <navigator class="content" hover-class="none" url="course" open-type="navigate">
       <text class="cuIcon-video lg text-gray"></text>
       <text class="text-grey">我的课程</text>
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" hover-class="none" url="vip" open-type="redirect">
+    <navigator class="content" hover-class="none" url="vip" open-type="navigate">
       <text class="cuIcon-vip lg text-gray"></text>
       <text class="text-grey">我的VIP</text>
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" hover-class="none" url="invite" open-type="redirect">
+    <navigator class="content" hover-class="none" url="invite" open-type="navigate">
       <text class="cuIcon-share lg text-gray"></text>
       <text class="text-grey">邀请用户</text>
     </navigator>
   </view>
 </view>
 
-<view class="cu-list menu margin-top">
+<view class="cu-list menu margin-top" wx:if="{{token !== ''}}">
   <view class="cu-item arrow">
     <navigator class="content" hover-class="none" url="../login/login" open-type="navigate">
       <text class="cuIcon-refresh lg text-gray"></text>

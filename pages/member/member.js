@@ -9,7 +9,8 @@ Page({
     user: {
       avatar: '',
       nick_name: ''
-    }
+    },
+    token: wx.getStorageSync('access_token')
   },
 
   /**
