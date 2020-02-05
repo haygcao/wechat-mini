@@ -96,20 +96,21 @@ Page({
     
     Api.user.captchaSms({
       mobile: this.data.mobile,
-      mobile_code: '123',
       image_captcha: this.data.image_captcha,
       image_key: this.data.image.key,
       scene: 'login'
     }).then(res => {
-
       this.setData({
         sms_loading: true
       });
-      timeoutHandler = setInterval(function() {
+      var timeoutHandler = setInterval(() => {
         if (this.data.sms_loading !== true) {
           return;
         }
         let s = this.data.sms_expire_seconds - 1;
+        this.setData({
+          sms_expire_seconds: s,
+        });
         if (s <= 0) {
           clearInterval(timeoutHandler);
           this.setData({
@@ -117,7 +118,7 @@ Page({
           });
           return;
         }
-      }, 100);
+      }, 1000);
 
     }).catch(e => {
       this.getCaptcha();
