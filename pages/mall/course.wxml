@@ -15,11 +15,11 @@
   </view>
   <view class="padding-bottom-lg padding-top-lg solid-bottom">
     <text class="text-xl">折扣</text>
-    <text style="float: right" class="text-red text-xl">-0</text>
+    <text style="float: right" class="text-red text-xl">-￥{{discount}}</text>
   </view>
   <view class="padding-bottom-lg padding-top-lg solid-bottom">
     <text class="text-xl">现价</text>
-    <text style="float: right" class="text-red text-xl">￥{{course.charge}}</text>
+    <text style="float: right" class="text-red text-xl">￥{{course.charge - discount >= 0 ? course.charge - discount : 0}}</text>
   </view>
 </view>
 

@@ -6,7 +6,7 @@ export function createCourseOrder(courseId, promoCodeId) {
     url: '/api/v2/order/course',
     data: {
       course_id: courseId,
-      promo_code_id: promoCodeId
+      promo_code: promoCodeId
     }
   })
 }
@@ -17,7 +17,7 @@ export function creteRoleOrder(roleId, promoCodeId) {
     url: '/api/v2/order/role',
     data: {
       role_id: roleId,
-      promo_code_id: promoCodeId
+      promo_code: promoCodeId
     }
   })
 }
@@ -30,5 +30,13 @@ export function payment(order_id) {
       order_id: order_id,
       openid: wx.getStorageSync('openid')
     }
+  })
+}
+
+export function checkPromoCode(code) {
+  return instance({
+    method: 'GET',
+    url: '/api/v2/promoCode/' + code + '/check',
+    data: {}
   })
 }

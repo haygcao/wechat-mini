@@ -7,8 +7,12 @@ Page({
    */
   data: {
     course: {
-
-    }
+      charge: 0
+    },
+    promoCode: {
+      code: ''
+    },
+    discount: 0
   },
 
   /**
@@ -19,9 +23,22 @@ Page({
       this.setData({
         course: res.course,
         chapters: res.chapters,
-        videos: res.videos,
+        videos: res.videos
       });
-    })
+    });
+
+    // 优惠码读取
+    let promoCode = wx.getStorageSync('promo_code');
+    if (promoCode) {
+      Api.order.checkPromoCode(promoCode).then(res => {
+        if (res.can_use === 1) {
+          this.setData({
+            discount: res.promo_code.invited_user_reward,
+            promoCode: res.promo_code
+          });
+        }
+      });
+    }
   },
 
   createOrder() {
@@ -32,7 +49,18 @@ Page({
       })
       return;
     }
-    Api.order.createCourseOrder(this.data.course.id, 0).then(res => {
+    Api.order.createCourseOrder(this.data.course.id, this.data.promoCode.code).then(res => {
+      if (res.continue_pay === false) {
+        // 直接抵扣了
+        wx.showToast({
+          icon: 'none',
+          title: '订单已完成'
+        });
+        setTimeout(() => {
+          wx.navigateBack({})
+        }, 800);
+        return;
+      }
       // 请求支付订单
       Api.order.payment(res.order_id).then(res => {
         // 发起支付
