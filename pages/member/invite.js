@@ -102,6 +102,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '我是应用名',
+      path: '/pages/index/index?promo_code=' + this.data.promoCode.code
+    }
   }
 })

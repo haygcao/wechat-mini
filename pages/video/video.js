@@ -75,8 +75,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-  },
+  onShow: function() {},
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -110,6 +109,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title: this.data.course.title,
+      path: '/pages/coure/course?id=' + this.data.course.id,
+      imageUrl: this.data.course.thumb
+    }
   }
 })
