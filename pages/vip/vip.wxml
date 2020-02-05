@@ -4,8 +4,8 @@
 
 <view class="margin-top bg-white">
   <navigator wx:for="{{roles}}" wx:key="id" wx:for-item="item" class="content" url="../mall/role?id={{item.id}}" open-type="navigate">
-    <view class="padding-bottom-lg solid-bottom padding-left padding-right">
-      <view style="line-height: 30px;">
+    <view class="padding-bottom-lg padding-top-lg solid-bottom padding-left padding-right">
+      <view style="line-height: 30px" class="text-xl">
         <text>{{item.name}}</text>
         <text style="float: right" class="text-price text-red">{{item.charge}}</text>
       </view>
