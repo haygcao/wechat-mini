@@ -111,7 +111,7 @@ Page({
   onShareAppMessage: function() {
     return {
       title: this.data.course.title,
-      path: '/pages/coure/course?id=' + this.data.course.id,
+      path: '/pages/coure/course?id=' + this.data.course.id + '&promo_code=' + wx.getStorageSync('promo_code'),
       imageUrl: this.data.course.thumb
     }
   }

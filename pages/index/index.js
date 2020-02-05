@@ -79,7 +79,7 @@ Page({
   onShareAppMessage: function() {
     return {
       title: '我是应用名',
-      path: '/pages/index/index'
+      path: '/pages/index/index?promo_code=' + wx.getStorageSync('promo_code')
     }
   }
 })
