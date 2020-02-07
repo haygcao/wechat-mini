@@ -1,7 +1,3 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">订阅课程</view>
-</cu-custom>
-
 <view class="bg-img padding-tb-xl" style="background-image: url('{{course.thumb}}');height: 414rpx;">
 </view>
 

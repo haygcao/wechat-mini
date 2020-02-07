@@ -1,7 +1,3 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">订阅VIP</view>
-</cu-custom>
-
 <view class="padding-left padding-right bg-white margin-top-lg">
   <view class="padding-bottom-lg padding-top-lg solid-bottom">
     <view><text class="text-xl">{{role.name}}</text></view>

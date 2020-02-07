@@ -1,7 +1,3 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
-  <view slot="content">会员中心</view>
-</cu-custom>
-
 <view class="bg-white padding text-center">
   <block wx:if="{{user.avatar.length > 0}}">
     <view class="cu-avatar xl round margin-left" style="background-image:url({{user.avatar}});"></view>

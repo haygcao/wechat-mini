@@ -17,8 +17,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "我是应用名",
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationBarTextStyle": "black"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
@@ -34,12 +33,6 @@
         "text": "首页",
         "iconPath": "images/icons/dashboard.png",
         "selectedIconPath": "images/icons/dashboard-active.png"
-      },
-      {
-        "pagePath": "pages/vip/vip",
-        "text": "VIP",
-        "iconPath": "images/icons/vip.png",
-        "selectedIconPath": "images/icons/vip-active.png"
       },
       {
         "pagePath": "pages/member/member",

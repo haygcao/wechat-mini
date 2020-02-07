@@ -1,9 +1,5 @@
 <wxs module="utils" src="../../wxs/utils.wxs"></wxs>
 
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">课程详情</view>
-</cu-custom>
-
 <view class="bg-img padding-tb-xl" style="background-image: url('{{course.thumb}}');height: 414rpx;">
 </view>
 <view class="flex padding bg-white">

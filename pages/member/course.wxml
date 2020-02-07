@@ -1,7 +1,3 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">我的课程</view>
-</cu-custom>
-
 <navigator wx:key="id" wx:for="{{courses}}" hover-class="none" url="../course/course?id={{item.id}}" open-type="navigate">
   <view class="cu-card case shadow shadow-lg">
     <view class="cu-item shadow">

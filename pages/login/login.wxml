@@ -1,7 +1,3 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">登录</view>
-</cu-custom>
-
 <view class="bg-white padding margin-top-lg" wx:if="{{loginType === 'sms'}}">
   <view class="padding-bottom-sm solid-bottom">
     <text class="text-gray">手机号</text>
