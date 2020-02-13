@@ -33,7 +33,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     this.getCaptcha();
   },
 
@@ -61,7 +61,15 @@ Page({
         mobile: this.data.mobile,
         mobile_code: this.data.sms_code,
       }).then(res => {
-        console.log(res);
+        wx.setStorageSync('access_token', res.token);
+        wx.switchTab({
+          url: '/pages/member/member'
+        })
+      }).catch(e => {
+        wx.showToast({
+          icon: 'none',
+          title: e
+        });
       })
     } else {
       if (this.data.password.length === 0) {
@@ -93,7 +101,7 @@ Page({
       sms_expire_seconds: this.data.sms_expire,
     });
     var timeoutHandler = null;
-    
+
     Api.user.captchaSms({
       mobile: this.data.mobile,
       image_captcha: this.data.image_captcha,
@@ -140,42 +148,42 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   }
 })
