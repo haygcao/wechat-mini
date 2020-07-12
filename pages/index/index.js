@@ -1,85 +1,65 @@
-const Api = require('../../api/index')
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    scrollLeft: 0,
-    categories: [],
-    courses: [],
-    category_id: 0,
-    page: 1,
-    page_size: 5,
-    loadMore: true,
-    loadMoreStatus: false
+
   },
-  categoryTap(e) {
-    this.setData({
-      category_id: e.currentTarget.dataset.id,
-    })
-    this.getCourses(true);
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
   },
-  onLoad() {
-    Api.course.getCourseCategories().then(res => {
-      this.setData({
-        categories: res
-      });
-    })
-    this.getCourses(true);
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
   },
-  getCourses(refresh) {
-    if (refresh) {
-      this.setData({
-        courses: [],
-        page: 1
-      });
-    }
-    Api.course.getCourseList({
-      category_id: this.data.category_id,
-      page: this.data.page,
-      page_size: this.data.page_size
-    }).then(res => {
-      this.setData({
-        loadMoreStatus: false,
-      });
-      if (res.data.length === 0) {
-        this.setData({
-          loadMore: false
-        });
-      }
-      var data = this.data.courses;
-      res.data.forEach(item => {
-        data.push(item);
-      });
-      this.setData({
-        courses: data
-      });
-    })
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
   },
-  onPullDownRefresh() {
-    this.setData({
-      page: 1,
-    });
-    this.getCourses(true);
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
   },
-  onReachBottom() {
-    if (this.data.loadMore === false) {
-      return;
-    }
-    this.setData({
-      loadMoreStatus: true,
-    })
-    this.setData({
-      page: this.data.page + 1,
-    });
-    this.getCourses(false);
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
-    return {
-      title: '我是应用名',
-      path: '/pages/index/index?promo_code=' + wx.getStorageSync('promo_code')
-    }
+  onShareAppMessage: function () {
+
   }
 })

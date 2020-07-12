@@ -1,45 +1,16 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/course/course",
-    "pages/video/video",
-    "pages/member/member",
-    "pages/login/login",
-    "pages/vip/vip",
-    "pages/mall/course",
-    "pages/mall/role",
-    "pages/member/course",
-    "pages/member/vip",
-    "pages/member/invite"
+    "pages/auth/login",
+    "pages/auth/login-password"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "我是应用名",
+    "navigationBarTitleText": "MeEdu",
     "navigationBarTextStyle": "black"
   },
-  "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom"
-  },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "tabBar": {
-    "color": "#8799a3",
-    "selectedColor": "#0081ff",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/icons/dashboard.png",
-        "selectedIconPath": "images/icons/dashboard-active.png"
-      },
-      {
-        "pagePath": "pages/member/member",
-        "text": "我的",
-        "iconPath": "images/icons/member.png",
-        "selectedIconPath": "images/icons/member-active.png"
-      }
-    ]
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
   }
 }
