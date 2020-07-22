@@ -22,82 +22,18 @@
 	<view class="index-banner-item">
 		<view class="title">最新课程</view>
 		<view class="courses-box">
-			<view class="course-item">
-				<view class="course-thumb">
-					<image src="" />
-				</view>
-				<view class="course-info-box">
-					<view class="course-name">我是课程名</view>
-					<view class="course-info">
-						<view class="user-count">
-							123
-						</view>
-						<view class="category">分类一</view>
-					</view>
-					<view class="course-charge">
-						<text class="charge">￥121</text>
-					</view>
-				</view>
-			</view>
+			<meedu-course name="我是课程1" thumb="" charge="11" user-count="120" category="分类一"></meedu-course>
 
-			<view class="course-item">
-				<view class="course-thumb">
-					<image src="" />
-				</view>
-				<view class="course-info-box">
-					<view class="course-name">我是课程名</view>
-					<view class="course-info">
-						<view class="user-count">
-							123
-						</view>
-						<view class="category">分类一</view>
-					</view>
-					<view class="course-charge">
-						<text class="charge">￥12</text>
-					</view>
-				</view>
-			</view>
+			<meedu-course name="我是课程2" thumb="" charge="12" user-count="120" category="分类一"></meedu-course>
 		</view>
 	</view>
 
 	<view class="index-banner-item">
 		<view class="title">热销课程</view>
 		<view class="courses-box">
-			<view class="course-item">
-				<view class="course-thumb">
-					<image src="" />
-				</view>
-				<view class="course-info-box">
-					<view class="course-name">我是课程名</view>
-					<view class="course-info">
-						<view class="user-count">
-							123
-						</view>
-						<view class="category">分类一</view>
-					</view>
-					<view class="course-charge">
-						<text class="charge">￥121</text>
-					</view>
-				</view>
-			</view>
+			<meedu-course name="我是课程3" thumb="" charge="13" user-count="120" category="分类一"></meedu-course>
 
-			<view class="course-item">
-				<view class="course-thumb">
-					<image src="" />
-				</view>
-				<view class="course-info-box">
-					<view class="course-name">我是课程名</view>
-					<view class="course-info">
-						<view class="user-count">
-							123
-						</view>
-						<view class="category">分类一</view>
-					</view>
-					<view class="course-charge">
-						<text class="charge">￥12</text>
-					</view>
-				</view>
-			</view>
+			<meedu-course name="我是课程4" thumb="" charge="14" user-count="120" category="分类一"></meedu-course>
 		</view>
 	</view>
 </view>

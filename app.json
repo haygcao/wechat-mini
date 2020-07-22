@@ -4,7 +4,8 @@
     "pages/auth/login",
     "pages/auth/login-password",
     "pages/member/home",
-    "custom-tab-bar/index"
+    "custom-tab-bar/index",
+    "components/course/course"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,6 +33,7 @@
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-image": "@vant/weapp/image/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "meedu-course":"./components/course/course"
   }
 }

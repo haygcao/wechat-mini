@@ -1,0 +1,15 @@
+<view class="course-item">
+  <view class="course-thumb">
+    <image src="{{thumb}}" />
+  </view>
+  <view class="course-info-box">
+    <view class="course-name">{{name}}</view>
+    <view class="course-info">
+      <view class="user-count">{{userCount}}</view>
+      <view class="category">{{category}}</view>
+    </view>
+    <view class="course-charge">
+      <text class="charge">￥{{charge}}</text>
+    </view>
+  </view>
+</view>
