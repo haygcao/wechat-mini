@@ -1,7 +1,10 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/auth/login",
-    "pages/auth/login-password"
+    "pages/auth/login-password",
+    "pages/member/home",
+    "custom-tab-bar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -10,7 +13,25 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/member/home",
+        "text": "我的"
+      }
+    ]
+  },
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-icon": "@vant/weapp/icon/index"
   }
 }

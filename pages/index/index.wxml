@@ -1,0 +1,103 @@
+<!--logo栏目-->
+<view class="topbar">
+	<image src="../../images/logo.png" class="logo" />
+	<view class="search-bar">
+		<image src="../../images/icons/search.png" class="search-bar-icon" />
+		<view class="text">搜索您想要的</view>
+	</view>
+</view>
+
+<!--幻灯片栏-->
+<view class="swiper-box">
+	<swiper indicator-dots="true" autoplay="true" indicator-color="rgba(0,0,0,.2)"
+		indicator-active-color="rgba(255,255,255,1)">
+		<swiper-item>
+			<image class="swiper-image-item" src="" />
+		</swiper-item>
+	</swiper>
+</view>
+
+<!--首页推荐-->
+<view class="index-banners-box">
+	<view class="index-banner-item">
+		<view class="title">最新课程</view>
+		<view class="courses-box">
+			<view class="course-item">
+				<view class="course-thumb">
+					<image src="" />
+				</view>
+				<view class="course-info-box">
+					<view class="course-name">我是课程名</view>
+					<view class="course-info">
+						<view class="user-count">
+							123
+						</view>
+						<view class="category">分类一</view>
+					</view>
+					<view class="course-charge">
+						<text class="charge">￥121</text>
+					</view>
+				</view>
+			</view>
+
+			<view class="course-item">
+				<view class="course-thumb">
+					<image src="" />
+				</view>
+				<view class="course-info-box">
+					<view class="course-name">我是课程名</view>
+					<view class="course-info">
+						<view class="user-count">
+							123
+						</view>
+						<view class="category">分类一</view>
+					</view>
+					<view class="course-charge">
+						<text class="charge">￥12</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="index-banner-item">
+		<view class="title">热销课程</view>
+		<view class="courses-box">
+			<view class="course-item">
+				<view class="course-thumb">
+					<image src="" />
+				</view>
+				<view class="course-info-box">
+					<view class="course-name">我是课程名</view>
+					<view class="course-info">
+						<view class="user-count">
+							123
+						</view>
+						<view class="category">分类一</view>
+					</view>
+					<view class="course-charge">
+						<text class="charge">￥121</text>
+					</view>
+				</view>
+			</view>
+
+			<view class="course-item">
+				<view class="course-thumb">
+					<image src="" />
+				</view>
+				<view class="course-info-box">
+					<view class="course-name">我是课程名</view>
+					<view class="course-info">
+						<view class="user-count">
+							123
+						</view>
+						<view class="category">分类一</view>
+					</view>
+					<view class="course-charge">
+						<text class="charge">￥12</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
