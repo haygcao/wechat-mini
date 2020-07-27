@@ -6,7 +6,8 @@
     "pages/member/home",
     "custom-tab-bar/index",
     "components/course/course",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/course/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,6 +25,10 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/course/list",
+        "text": "课程"
       },
       {
         "pagePath": "pages/member/home",

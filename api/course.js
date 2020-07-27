@@ -1,20 +1,20 @@
 import instance from './instance'
 
-export function getCourseList(params) {
+export function list(params) {
     return instance({
         url: '/api/v2/courses',
         data: params
     })
 }
 
-export function getCourseCategories(params) {
+export function categories(params) {
     return instance({
         url: '/api/v2/course_categories',
         data: params
     })
 }
 
-export function getCourseInfo(courseId) {
+export function detail(courseId) {
     return instance({
         url: `/api/v2/course/${courseId}`
     })
@@ -26,7 +26,7 @@ export function getCourseComment(courseId) {
     })
 }
 
-export function getCourseComments(courseId) {
+export function comments(courseId) {
     return instance({
         url: `/api/v2/course/${courseId}/comments`
     })

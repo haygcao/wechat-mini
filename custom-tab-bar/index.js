@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    active: 'index',
+    tabs: {
+      index: '/pages/index/index',
+      member: '/pages/member/home',
+      course: '/pages/course/list',
+      order: '/pages/order/order'
+    }
   },
 
   /**
@@ -62,5 +68,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  switch (e) {
+    let tab = e.currentTarget.dataset.active;
+    let url = this.data.tabs[tab];
+    wx.switchTab({
+      url: url,
+    })
   }
 })

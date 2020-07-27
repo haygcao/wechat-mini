@@ -1,5 +1,5 @@
 <view class="tabbar">
-  <view class="tabbar-item">
+  <view class="tabbar-item" data-active="index" bindtap="switch">
     <view class="icon">
       <image src="../images/icons/home.png"/>
     </view>
@@ -7,7 +7,7 @@
       <text>首页</text>
     </view>
   </view>
-  <view class="tabbar-item">
+  <view class="tabbar-item" data-active="course" bindtap="switch">
     <view class="icon">
       <image src="../images/icons/course.png"/>
     </view>
@@ -15,7 +15,7 @@
       <text>课程</text>
     </view>
   </view>
-  <view class="tabbar-item">
+  <view class="tabbar-item" data-active="order" bindtap="switch">
     <view class="icon">
       <image src="../images/icons/order.png"/>
     </view>
@@ -23,7 +23,7 @@
       <text>学习</text>
     </view>
   </view>
-  <view class="tabbar-item">
+  <view class="tabbar-item" data-active="member" bindtap="switch">
     <view class="icon">
       <image src="../images/icons/user.png"/>
     </view>

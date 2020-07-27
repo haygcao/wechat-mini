@@ -1,0 +1,16 @@
+<scroll-view class="course-category-container" scroll-x="true">
+  <view class="category-item {{pagination.category_id === 0 ? 'active' : ''}}" bindtap="swtichCategory" data-cid="0">全部</view>
+  <view class="category-item {{pagination.category_id === category.id ? 'active' : ''}}" wx:for="{{categories}}" wx:key="id"
+    wx:for-item="category" bindtap="swtichCategory" data-cid="{{category.id}}">{{category.name}}</view>
+</scroll-view>
+
+<scroll-view class="course-container" scroll-y="true" bindscrolltolower="loadMore">
+  <view class="course-list" wx:if="{{courses.length > 0}}">
+    <meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}"
+      user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{courses}}" wx:for-item="course"
+      wx:key="id"></meedu-course>
+  </view>
+  <view class="course-list" wx:else>
+    <meedu-none></meedu-none>
+  </view>
+</scroll-view>
