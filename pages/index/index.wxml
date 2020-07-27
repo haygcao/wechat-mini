@@ -19,21 +19,10 @@
 
 <!--首页推荐-->
 <view class="index-banners-box">
-	<view class="index-banner-item">
-		<view class="title">最新课程</view>
+	<view class="index-banner-item" wx:for="{{banners}}" wx:for-item="banner">
+		<view class="title">{{banner.name}}</view>
 		<view class="courses-box">
-			<meedu-course name="我是课程1" thumb="" charge="11" user-count="120" category="分类一"></meedu-course>
-
-			<meedu-course name="我是课程2" thumb="" charge="12" user-count="120" category="分类一"></meedu-course>
-		</view>
-	</view>
-
-	<view class="index-banner-item">
-		<view class="title">热销课程</view>
-		<view class="courses-box">
-			<meedu-course name="我是课程3" thumb="" charge="13" user-count="120" category="分类一"></meedu-course>
-
-			<meedu-course name="我是课程4" thumb="" charge="14" user-count="120" category="分类一"></meedu-course>
+			<meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}" user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{banner.courses}}" wx:for-item="course"></meedu-course>
 		</view>
 	</view>
 </view>
