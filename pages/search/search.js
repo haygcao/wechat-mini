@@ -1,4 +1,6 @@
-import { home } from '../../api/index'
+import {
+  home
+} from '../../api/index'
 
 Page({
 
@@ -6,25 +8,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    banners: [],
-    sliders: []
+    courses: [],
+    keywords: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    home.indexBanners().then(res => {
-      this.setData({
-        banners: res
-      });
-    })
 
-    home.sliders().then(res => {
-      this.setData({
-        sliders: res
-      });
-    })
   },
 
   /**
@@ -75,9 +67,27 @@ Page({
   onShareAppMessage: function () {
 
   },
-  goSearch() {
-    wx.navigateTo({
-      url: '/pages/search/search',
+
+  search() {
+    if (this.data.keywords.length === 0) {
+      wx.showToast({
+        title: '请输入关键字',
+        icon: 'none'
+      })
+      return;
+    }
+
+    home.search({
+      keywords: this.data.keywords
+    }).then(res => {
+      this.setData({
+        courses: res.data
+      });
     })
+  },
+  inputSync(e) {
+    this.setData({
+      keywords: e.detail.value,
+    });
   }
 })

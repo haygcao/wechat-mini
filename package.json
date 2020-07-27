@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@vant/weapp": "^1.3.3",
-    "wx-updata": "^0.0.11"
+    "@vant/weapp": "^1.3.3"
   }
 }

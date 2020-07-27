@@ -1,0 +1,13 @@
+.none {
+  width: 100%;
+  height: auto;
+  float: left;
+  text-align: center;
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+
+.none>image {
+  width: 160px;
+  height: 160px;
+}

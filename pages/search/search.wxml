@@ -1,0 +1,18 @@
+<view class="search-bar">
+  <view class="input">
+    <input class="search-input" placeholder="输入关键字" confirm-type="search" bindinput="inputSync" />
+  </view>
+  <view class="button" bindtap="search">
+    <text>搜索</text>
+  </view>
+</view>
+
+<view class="search-result">
+  <view class="title">搜索结果</view>
+  <view class="result" wx:if="{{courses.length > 0}}">
+    <meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}" user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{courses}}" wx:key="id" wx:for-item="course"></meedu-course>
+  </view>
+  <view class="result" wx:else>
+    <meedu-none></meedu-none>
+  </view>
+</view>
