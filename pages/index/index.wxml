@@ -11,8 +11,8 @@
 <view class="swiper-box">
 	<swiper indicator-dots="true" autoplay="true" indicator-color="rgba(0,0,0,.2)"
 		indicator-active-color="rgba(255,255,255,1)">
-		<swiper-item>
-			<image class="swiper-image-item" src="" />
+		<swiper-item wx:for="{{sliders}}" wx:for-item="slider">
+			<image class="swiper-image-item" src="{{slider.thumb}}" />
 		</swiper-item>
 	</swiper>
 </view>

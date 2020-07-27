@@ -6,3 +6,12 @@ export function indexBanners(params) {
       data: params
   })
 }
+
+export function sliders() {
+  return instance({
+      url: '/api/v2/sliders',
+      data: {
+        platform: 'mini'
+      }
+  })
+}

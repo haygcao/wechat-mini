@@ -7,7 +7,7 @@ Page({
    */
   data: {
     banners: [],
-    slider: []
+    sliders: []
   },
 
   /**
@@ -15,9 +15,14 @@ Page({
    */
   onLoad: function (options) {
     home.indexBanners().then(res => {
-      console.log(res);
       this.upData({
         banners: res
+      });
+    })
+
+    home.sliders().then(res => {
+      this.upData({
+        sliders: res
       });
     })
   },
