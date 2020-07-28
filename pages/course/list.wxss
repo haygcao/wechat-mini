@@ -25,7 +25,7 @@
 
 .course-container {
   position: fixed;
-  top: 30px;
+  top: 40px;
   left: 0;
   right: 0;
   bottom: 50px;

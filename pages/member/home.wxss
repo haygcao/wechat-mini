@@ -1,1 +1,167 @@
-/* pages/member/home.wxss */
+page {
+  background-color: #f2f2f2;
+}
+
+.user-banner {
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 30px 15px 0 15px;
+  background: linear-gradient(180deg, rgba(23, 132, 237, 1) 0%, rgba(23, 132, 237, 1) 44%, #f2f2f2 100%);
+}
+
+.user-banner>.user-info {
+  width: 100%;
+  height: auto;
+  float: left;
+  display: flex;
+}
+
+.user-banner>.user-info>.avatar {
+  width: 64px;
+  height: 64px;
+  margin-right: 15px;
+}
+
+.user-banner>.user-info>.avatar>image {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.user-banner>.user-info>.info {
+  flex: 1;
+}
+
+.user-banner>.user-info>.info>.nickname {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding-top: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.user-banner>.user-info>.info>.role {
+  width: 100%;
+  height: auto;
+  float: left;
+
+}
+
+.user-banner>.user-info>.info>.role>.role-text {
+  display: inline;
+  padding: 2px 15px;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 1;
+}
+
+.user-banner>.member-banners {
+  width: 100%;
+  height: auto;
+  float: left;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px 8px 0px 0px;
+  margin-top: 30px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-banner>.member-banners>.item {
+  flex: 1;
+  text-align: center;
+}
+
+.user-banner>.member-banners>.item>.icon {
+  width: 100%;
+  height: auto;
+  float: left;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.user-banner>.member-banners>.item>.icon>image {
+  width: 36px;
+  height: 36px;
+}
+
+.user-banner>.member-banners>.item>.name {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 1;
+}
+
+.user-banner>.role-expired-at {
+  width: 100%;
+  height: auto;
+  float: left;
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  background: rgba(255, 230, 180, 1);
+  border-radius: 0px 0px 8px 8px;
+}
+
+.user-banner>.role-expired-at>.icon {
+  margin-right: 10px;
+}
+
+.user-banner>.role-expired-at>.icon>image {
+  width: 24px;
+  height: 19px;
+}
+
+.user-banner>.role-expired-at>.text {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(213, 124, 31, 1);
+  line-height: 19px;
+}
+
+.member-menus-box {
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 60px;
+}
+
+.member-menus-box>.member-menus {
+  width: 100%;
+  height: auto;
+  float: left;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.member-menus-box>.member-menus>.item {
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 1;
+}

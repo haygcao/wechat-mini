@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/auth/login",
-    "pages/auth/login-password",
     "pages/member/home",
     "custom-tab-bar/index",
     "components/course/course",
@@ -18,9 +17,6 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "custom": true,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
     "list": [
       {
         "pagePath": "pages/index/index",

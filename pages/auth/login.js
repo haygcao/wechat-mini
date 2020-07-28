@@ -1,18 +1,20 @@
-// pages/auth/login.js
+import {
+  login
+} from '../../api/index'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -61,6 +63,30 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+
+  bindGetUserInfo(e) {
+    let data = e.detail;
+
+    login.wxLogin({
+      openid: wx.getStorageSync('openid'),
+      iv: data.iv,
+      rawData: data.rawData,
+      signature: data.signature,
+      encryptedData: data.encryptedData
+    }).then(res => {
+      wx.setStorageSync('access_token', res.token);
+
+      wx.navigateBack({
+        delta: 0,
+      })
+    })
+  },
+  openUserProtocol() {
+
+  },
+  openUserPrivateProtocol() {
 
   }
 })

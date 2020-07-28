@@ -1,18 +1,26 @@
-// pages/member/home.js
+import { user } from '../../api/index'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    token: wx.getStorageSync('access_token'),
+    user: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (this.data.token) {
+      user.info().then(res => {
+        this.setData({
+          user: res
+        });
+      });
+    }
   },
 
   /**
@@ -62,5 +70,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  goLogin() {
+    // 已登录判断
+    wx.navigateTo({
+      url: '/pages/auth/login',
+    })
   }
 })
