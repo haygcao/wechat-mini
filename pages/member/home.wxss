@@ -51,7 +51,6 @@ page {
   width: 100%;
   height: auto;
   float: left;
-
 }
 
 .user-banner>.user-info>.info>.role>.role-text {
@@ -133,6 +132,23 @@ page {
   font-weight: 400;
   color: rgba(213, 124, 31, 1);
   line-height: 19px;
+  padding-top: 3px;
+}
+
+.user-banner>.role-expired-at>.text>.detail {
+  display: block;
+  width: 76px;
+  height: 25px;
+  float: right;
+  margin-top: -3px;
+  background: linear-gradient(90deg, rgba(236, 179, 66, 1) 0%, rgba(213, 124, 31, 1) 100%);
+  border-radius: 15px;
+  font-size: 13px;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  font-weight: 400;
+  color: rgba(248, 250, 251, 1);
+  line-height: 1;
 }
 
 .member-menus-box {

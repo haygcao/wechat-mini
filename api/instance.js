@@ -8,8 +8,7 @@ export default function instance(params) {
       url: baseUrl + params.url || '',
       data: params.data || {},
       header: {
-        Authorization: `Bearer ${wx.getStorageSync('access_token')}`,
-        'third-session': wx.getStorageSync('thirdSession') || ''
+        Authorization: `Bearer ${wx.getStorageSync('access_token')}`
       },
       success(res) {
         if (res.statusCode !== 200) {

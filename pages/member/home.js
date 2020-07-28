@@ -1,4 +1,6 @@
-import { user } from '../../api/index'
+import {
+  user
+} from '../../api/index'
 
 Page({
 
@@ -13,15 +15,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    if (this.data.token) {
-      user.info().then(res => {
-        this.setData({
-          user: res
-        });
-      });
-    }
-  },
+  onLoad: function (options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -34,7 +28,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getUser();
   },
 
   /**
@@ -72,8 +66,17 @@ Page({
 
   },
 
+  getUser() {
+    if (this.data.token) {
+      user.info().then(res => {
+        this.setData({
+          user: res
+        });
+      });
+    }
+  },
+
   goLogin() {
-    // 已登录判断
     wx.navigateTo({
       url: '/pages/auth/login',
     })

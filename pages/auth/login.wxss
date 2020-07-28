@@ -27,6 +27,7 @@
   width: 100%;
   height: auto;
   float: left;
+  box-sizing: border-box;
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 30px;

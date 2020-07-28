@@ -21,7 +21,6 @@ export function getUserRoles(data) {
     })
 }
 
-
 export function getUserCourses(data) {
   return instance({
     url: '/api/v2/member/courses',
