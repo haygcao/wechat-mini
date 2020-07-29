@@ -84,9 +84,24 @@ export function historyCourses(data) {
   })
 }
 
-export function inviteBalanceRecrods(data) {
+export function inviteBalanceRecords(data) {
   return instance({
-    url: '/api/v2/member/inviteBalanceRecrods',
+    url: '/api/v2/member/inviteBalanceRecords',
+    data: data
+  })
+}
+
+export function withdrawRecords(data) {
+  return instance({
+    url: '/api/v2/member/withdrawRecords',
+    data: data
+  })
+}
+
+export function createWithdraw(data) {
+  return instance({
+    method: 'POST',
+    url: '/api/v2/member/withdraw',
     data: data
   })
 }

@@ -18,7 +18,7 @@
       <view class="name">邀请余额(元)</view>
     </view>
     <view class="buttons">
-      <text class="withdraw" bindtap="goPage" data-pa="/pages/member/ib_withdraw">去提现</text>
+      <text class="withdraw" bindtap="goWithdraw">去提现</text>
     </view>
   </view>
 

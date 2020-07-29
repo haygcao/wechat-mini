@@ -138,5 +138,19 @@ Page({
         })
       }
     })
+  },
+
+  goWithdraw() {
+    if (this.data.user.invite_balance === 0) {
+      wx.showToast({
+        icon: 'none',
+        title: '余额不足',
+      })
+      return
+    }
+
+    wx.navigateTo({
+      url: '/pages/member/ib_withdraw',
+    })
   }
 })

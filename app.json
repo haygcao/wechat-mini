@@ -14,7 +14,9 @@
     "pages/member/collect",
     "pages/member/message",
     "pages/member/promoCode",
-    "pages/member/credit1"
+    "pages/member/credit1",
+    "pages/member/ib_withdraw",
+    "pages/member/withdraw_records"
   ],
   "window": {
     "backgroundTextStyle": "light",
