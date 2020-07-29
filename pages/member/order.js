@@ -1,11 +1,17 @@
-// pages/member/order.js
+import {user} from '../../api/index'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pagination: {
+      page: 1,
+      page_size: 8,
+      is_over: false
+    },
+    orders: []
   },
 
   /**
@@ -26,7 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData(true);
   },
 
   /**
@@ -47,7 +53,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.getData(true);
   },
 
   /**
@@ -62,5 +68,46 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getData(reset = false) {
+    if (reset) {
+      this.setData({
+        'pagination.page': 1,
+        'pagination.is_over': false,
+        orders: []
+      });
+    }
+    if (this.data.pagination.is_over) {
+      return;
+    }
+    user.orders(this.data.pagination).then(res => {
+      let data = res.data;
+      if (data.length === 0) {
+        this.setData({
+          'pagination.is_over': true
+        });
+      } else {
+        let list = this.data.orders;
+        list.push(...data);
+        this.setData({
+          orders: list
+        });
+      }
+
+      if (reset) {
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+
+  loadMore() {
+    if (this.data.pagination.is_over) {
+      return;
+    }
+    this.setData({
+      'pagination.page': this.data.pagination.page + 1
+    });
+    this.getData();
   }
 })

@@ -7,7 +7,7 @@ export function info() {
     })
 }
 
-export function getUserOrders(data) {
+export function orders(data) {
     return instance({
         url: '/api/v2/member/orders',
         data: data
