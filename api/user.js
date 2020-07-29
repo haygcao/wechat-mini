@@ -2,43 +2,65 @@ import instance from './instance'
 
 
 export function info() {
-    return instance({
-        url: '/api/v2/member/detail'
-    })
+  return instance({
+    url: '/api/v2/member/detail'
+  })
 }
 
 export function orders(data) {
-    return instance({
-        url: '/api/v2/member/orders',
-        data: data
-    })
+  return instance({
+    url: '/api/v2/member/orders',
+    data: data
+  })
 }
 
 export function credit1Records(data) {
   return instance({
-      url: '/api/v2/member/credit1Records',
-      data: data
+    url: '/api/v2/member/credit1Records',
+    data: data
+  })
+}
+
+export function inviteUsers(data) {
+  return instance({
+    url: '/api/v2/member/inviteUsers',
+    data: data
+  })
+}
+
+export function promoCode(data) {
+  return instance({
+    url: '/api/v2/member/promoCode',
+    data: data
+  })
+}
+
+export function createPromoCode(data) {
+  return instance({
+    method: 'POST',
+    url: '/api/v2/member/promoCode',
+    data: data
   })
 }
 
 export function messages(data) {
   return instance({
-      url: '/api/v2/member/messages',
-      data: data
+    url: '/api/v2/member/messages',
+    data: data
   })
 }
 
 export function messageMarkRead(id) {
   return instance({
-      url: '/api/v2/member/notificationMarkAsRead/' + id
+    url: '/api/v2/member/notificationMarkAsRead/' + id
   })
 }
 
 export function getUserRoles(data) {
-    return instance({
-        url: '/api/v2/member/roles',
-        data: data
-    })
+  return instance({
+    url: '/api/v2/member/roles',
+    data: data
+  })
 }
 
 export function courses(data) {
@@ -62,22 +84,7 @@ export function historyCourses(data) {
   })
 }
 
-export function getPromoCode() {
-  return instance({
-    url: '/api/v2/member/promoCode',
-    data: {}
-  })
-}
-
-export function createPromoCode() {
-  return instance({
-    method: 'POST',
-    url: '/api/v2/member/promoCode',
-    data: {}
-  })
-}
-
-export function getInviteBalanceRecrods(data) {
+export function inviteBalanceRecrods(data) {
   return instance({
     url: '/api/v2/member/inviteBalanceRecrods',
     data: data
