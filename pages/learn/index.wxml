@@ -1,0 +1,38 @@
+<van-tabs active="{{ active }}" bind:change="onChange" swipeable="true" animated="true" line-width="20" color="#1784ED">
+  <van-tab title="购买课程"></van-tab>
+  <van-tab title="收藏课程"></van-tab>
+  <van-tab title="观看历史"></van-tab>
+</van-tabs>
+
+<scroll-view class="buy-courses-box" scroll-y="true" bindscrolltolower="loadMore" hidden="{{active !== 0}}">
+  <view class="course-list">
+    <block wx:if="{{courses.buyCourse.length > 0}}">
+      <meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}"
+        user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{courses.buyCourse}}"
+        wx:for-item="course" wx:key="id"></meedu-course>
+    </block>
+    <meedu-none wx:else></meedu-none>
+  </view>
+</scroll-view>
+
+<scroll-view class="collection-courses-box" scroll-y="true" bindscrolltolower="loadMore" hidden="{{active !== 1}}">
+  <view class="course-list">
+    <block wx:if="{{courses.collection.length > 0}}">
+      <meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}"
+        user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{courses.collection}}"
+        wx:for-item="course" wx:key="id"></meedu-course>
+    </block>
+    <meedu-none wx:else></meedu-none>
+  </view>
+</scroll-view>
+
+<scroll-view class="history-courses-box" scroll-y="true" bindscrolltolower="loadMore" hidden="{{active !== 2}}">
+  <view class="course-list">
+    <block wx:if="{{courses.history.length > 0}}">
+      <meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}"
+        user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{courses.history}}"
+        wx:for-item="course" wx:key="id"></meedu-course>
+    </block>
+    <meedu-none wx:else></meedu-none>
+  </view>
+</scroll-view>

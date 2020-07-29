@@ -21,9 +21,23 @@ export function getUserRoles(data) {
     })
 }
 
-export function getUserCourses(data) {
+export function courses(data) {
   return instance({
     url: '/api/v2/member/courses',
+    data: data
+  })
+}
+
+export function collectionCourses(data) {
+  return instance({
+    url: '/api/v2/member/courses/like',
+    data: data
+  })
+}
+
+export function historyCourses(data) {
+  return instance({
+    url: '/api/v2/member/courses/history',
     data: data
   })
 }

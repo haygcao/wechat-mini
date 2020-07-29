@@ -15,7 +15,7 @@
       <text>课程</text>
     </view>
   </view>
-  <view class="tabbar-item" data-active="order" bindtap="switch">
+  <view class="tabbar-item" data-active="learn" bindtap="switch">
     <view class="icon">
       <image src="../images/icons/order.png"/>
     </view>

@@ -10,7 +10,7 @@ Page({
       index: '/pages/index/index',
       member: '/pages/member/home',
       course: '/pages/course/list',
-      order: '/pages/order/order'
+      learn: '/pages/learn/index'
     }
   },
 

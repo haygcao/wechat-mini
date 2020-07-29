@@ -2,6 +2,8 @@ import {
   login
 } from '../../api/index'
 
+const app = getApp()
+
 Page({
 
   /**
@@ -69,7 +71,7 @@ Page({
   bindGetUserInfo(e) {
     let data = e.detail;
 
-    login.wxLogin({
+    login.wxMobileLogin({
       openid: wx.getStorageSync('openid'),
       iv: data.iv,
       rawData: data.rawData,
@@ -83,10 +85,17 @@ Page({
       })
     })
   },
+
   openUserProtocol() {
-
+    wx.navigateTo({
+      url: '/pages/common/web?url=' + app.globalData.user_protocol,
+    })
   },
-  openUserPrivateProtocol() {
 
-  }
+  openUserPrivateProtocol() {
+    wx.navigateTo({
+      url: '/pages/common/web?url=' + app.globalData.user_private_protocol,
+    })
+  },
+
 })

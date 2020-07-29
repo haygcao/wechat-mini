@@ -8,7 +8,9 @@ export default function instance(params) {
       url: baseUrl + params.url || '',
       data: params.data || {},
       header: {
-        Authorization: `Bearer ${wx.getStorageSync('access_token')}`
+        Authorization: `Bearer ${wx.getStorageSync('access_token')}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
       },
       success(res) {
         if (res.statusCode !== 200) {
@@ -22,6 +24,10 @@ export default function instance(params) {
         if (res.data.code === 0) {
           resolve(res.data.data || {})
         } else {
+          if (res.data.code === 401) {
+            // 需要重新登录
+            wx.removeStorageSync('access_token');
+          }
           reject(res.data.message)
         }
       },

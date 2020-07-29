@@ -67,7 +67,7 @@ Page({
   },
 
   getUser() {
-    if (this.data.token) {
+    if (wx.getStorageSync('access_token')) {
       user.info().then(res => {
         this.setData({
           user: res

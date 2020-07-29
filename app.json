@@ -8,7 +8,8 @@
     "pages/search/search",
     "pages/course/list",
     "pages/member/setting",
-    "pages/common/web"
+    "pages/common/web",
+    "pages/learn/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,14 +20,17 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "custom": true,
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
         "pagePath": "pages/course/list",
         "text": "课程"
+      },
+      {
+        "pagePath": "pages/learn/index",
+        "text": "学习"
       },
       {
         "pagePath": "pages/member/home",
@@ -38,6 +42,8 @@
     "van-button": "@vant/weapp/button/index",
     "van-image": "@vant/weapp/image/index",
     "van-icon": "@vant/weapp/icon/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
     "meedu-course": "./components/course/course",
     "meedu-none": "./components/none/none"
   }

@@ -7,3 +7,11 @@ export function wxLogin(data) {
     data: data
   })
 }
+
+export function wxMobileLogin(data) {
+  return instance({
+    method: 'POST',
+    url: '/api/v2/login/wechatMiniMobile',
+    data: data
+  })
+}
