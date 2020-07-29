@@ -2,6 +2,7 @@
   width: 100%;
   height: auto;
   float: left;
+  box-sizing: border-box;
   padding: 30px 15px;
   background-color: #1784ED;
 }
