@@ -82,9 +82,6 @@
 
 <view class="member-menus-box">
   <view class="member-menus">
-    <view class="item" bindtap="goPage" data-page="/pages/member/profile">
-      个人资料
-    </view>
     <view class="item" bindtap="goPage" data-page="/pages/member/promoCode">
       我的邀请
     </view>

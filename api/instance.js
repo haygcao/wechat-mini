@@ -26,11 +26,13 @@ export default function instance(params) {
         } else {
           if (res.data.code === 401) {
             // 需要重新登录
-            wx.removeStorageSync('access_token');
-            wx.navigateTo({
-              url: '/pages/auth/login',
-            })
-            return
+            if (wx.getStorageSync('access_token')) {
+              wx.removeStorageSync('access_token');
+              wx.navigateTo({
+                url: '/pages/auth/login',
+              })
+              return
+            }
           }
           reject(res.data.message)
         }

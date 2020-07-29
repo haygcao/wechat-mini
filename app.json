@@ -12,7 +12,9 @@
     "pages/learn/index",
     "pages/member/order",
     "pages/member/collect",
-    "pages/member/message"
+    "pages/member/message",
+    "pages/member/promoCode",
+    "pages/member/credit1"
   ],
   "window": {
     "backgroundTextStyle": "light",

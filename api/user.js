@@ -14,6 +14,13 @@ export function orders(data) {
     })
 }
 
+export function credit1Records(data) {
+  return instance({
+      url: '/api/v2/member/credit1Records',
+      data: data
+  })
+}
+
 export function messages(data) {
   return instance({
       url: '/api/v2/member/messages',

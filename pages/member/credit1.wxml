@@ -1,0 +1,26 @@
+<view class="credit1-box">
+  <view class="credit1-text">
+    我的积分：<text class="value">{{credit1}}</text>
+  </view>
+</view>
+
+<scroll-view class="scroll-box" scroll-y="true" bindscrolltolower="loadMore">
+  <view class="credit1-records-box">
+    <block wx:if="{{records.length > 0}}">
+      <view class="item" wx:for="{{records}}" wx:key="id" wx:for-item="record">
+        <view class="content">
+          <view class="remark">
+            {{record.remark}}
+          </view>
+          <view class="date">
+            {{record.created_at}}
+          </view>
+        </view>
+        <view class="value {{record.sum>0?'income': ''}}">
+          {{record.sum}}
+        </view>
+      </view>
+    </block>
+    <meedu-none wx:else></meedu-none>
+  </view>
+</scroll-view>
