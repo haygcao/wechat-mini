@@ -9,7 +9,9 @@
     "pages/course/list",
     "pages/member/setting",
     "pages/common/web",
-    "pages/learn/index"
+    "pages/learn/index",
+    "pages/member/order",
+    "pages/member/collect"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +22,8 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "custom": true,
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页"
       },

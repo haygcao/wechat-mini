@@ -3,7 +3,6 @@ page {
 }
 
 .buy-courses-box,
-.collection-courses-box,
 .history-courses-box {
   position: fixed;
   top: 44px;

@@ -2,7 +2,9 @@ import {
   user
 } from '../../api/index'
 
-import {loginCheck} from '../../utils/util'
+import {
+  loginCheck
+} from '../../utils/util'
 
 Page({
 
@@ -23,17 +25,10 @@ Page({
         page_size: 8,
         is_over: false,
         loading: false
-      },
-      collection: {
-        page: 1,
-        page_size: 8,
-        is_over: false,
-        loading: false
       }
     },
     courses: {
       buyCourse: [],
-      collection: [],
       history: []
     }
   },
@@ -57,7 +52,6 @@ Page({
    */
   onShow: function () {
     this.getCourses();
-    this.getCollection();
     this.getHistory();
   },
 
@@ -101,8 +95,6 @@ Page({
     if (active === 0) {
       this.getCourses();
     } else if (active === 1) {
-      this.getCollection();
-    } else if (active === 2) {
       this.getHistory();
     }
   },
@@ -120,24 +112,6 @@ Page({
         data.push(...list);
         this.setData({
           'courses.buyCourses': data
-        });
-      }
-    })
-  },
-
-  getCollection() {
-    // 收藏课程
-    user.collectionCourses(this.data.pagination.collection).then(res => {
-      let list = res.data;
-      if (list.length === 0) {
-        this.setData({
-          'pagination.collection.is_over': true
-        });
-      } else {
-        let data = this.data.courses.collection;
-        data.push(...list);
-        this.setData({
-          'courses.collection': data
         });
       }
     })
@@ -170,13 +144,6 @@ Page({
         'pagination.buyCourse.page': this.data.pagination.buyCourse.page + 1
       });
     } else if (this.data.active === 1) {
-      if (this.data.pagination.collection.is_over) {
-        return;
-      }
-      this.setData({
-        'pagination.collection.page': this.data.pagination.collection.page + 1
-      });
-    } else if (this.data.active === 2) {
       if (this.data.pagination.history.is_over) {
         return;
       }

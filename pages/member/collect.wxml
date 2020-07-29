@@ -1,0 +1,10 @@
+<scroll-view class="scroll-box" scroll-y="true" bindscrolltolower="loadMore">
+  <view class="course-list">
+    <block wx:if="{{courses.length > 0}}">
+      <meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}"
+        user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{courses}}" wx:for-item="course"
+        wx:key="id"></meedu-course>
+    </block>
+    <meedu-none wx:else></meedu-none>
+  </view>
+</scroll-view>

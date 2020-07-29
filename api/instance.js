@@ -27,6 +27,10 @@ export default function instance(params) {
           if (res.data.code === 401) {
             // 需要重新登录
             wx.removeStorageSync('access_token');
+            wx.navigateTo({
+              url: '/pages/auth/login',
+            })
+            return
           }
           reject(res.data.message)
         }

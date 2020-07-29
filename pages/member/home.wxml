@@ -25,7 +25,7 @@
   </view>
 
   <view class="member-banners">
-    <view class="item">
+    <view class="item" bindtap="goPage" data-page="/pages/member/order">
       <view class="icon">
         <image src="../../images/icons/member/order.png" />
       </view>
@@ -34,7 +34,7 @@
       </view>
     </view>
 
-    <view class="item">
+    <view class="item" bindtap="goPage" data-page="/pages/member/collect">
       <view class="icon">
         <image src="../../images/icons/member/collect.png" />
       </view>
@@ -43,7 +43,7 @@
       </view>
     </view>
 
-    <view class="item">
+    <view class="item" bindtap="goPage" data-page="/pages/member/message">
       <view class="icon">
         <image src="../../images/icons/member/message.png" />
       </view>
@@ -52,7 +52,7 @@
       </view>
     </view>
 
-    <view class="item">
+    <view class="item" bindtap="goPage" data-page="/pages/role/index">
       <view class="icon">
         <image src="../../images/icons/member/role.png" />
       </view>
@@ -82,13 +82,13 @@
 
 <view class="member-menus-box">
   <view class="member-menus">
-    <view class="item">
+    <view class="item" bindtap="goPage" data-page="/pages/member/profile">
       个人资料
     </view>
-    <view class="item">
+    <view class="item" bindtap="goPage" data-page="/pages/member/promoCode">
       我的邀请
     </view>
-    <view class="item">
+    <view class="item" bindtap="goPage" data-page="/pages/member/credit1">
       我的积分
     </view>
     <view class="item" bindtap="goPage" data-page="/pages/member/setting">
