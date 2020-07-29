@@ -14,6 +14,19 @@ export function orders(data) {
     })
 }
 
+export function messages(data) {
+  return instance({
+      url: '/api/v2/member/messages',
+      data: data
+  })
+}
+
+export function messageMarkRead(id) {
+  return instance({
+      url: '/api/v2/member/notificationMarkAsRead/' + id
+  })
+}
+
 export function getUserRoles(data) {
     return instance({
         url: '/api/v2/member/roles',

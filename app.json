@@ -11,7 +11,8 @@
     "pages/common/web",
     "pages/learn/index",
     "pages/member/order",
-    "pages/member/collect"
+    "pages/member/collect",
+    "pages/member/message"
   ],
   "window": {
     "backgroundTextStyle": "light",
