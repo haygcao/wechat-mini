@@ -1,21 +1,21 @@
-import {
-  user
-} from '../../api/index'
-
+// pages/common/web.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    token: wx.getStorageSync('access_token'),
-    user: null
+    url: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    this.setData({
+      url: options.url
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -28,7 +28,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getUser();
+
   },
 
   /**
@@ -64,28 +64,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  getUser() {
-    if (this.data.token) {
-      user.info().then(res => {
-        this.setData({
-          user: res
-        });
-      });
-    }
-  },
-
-  goLogin() {
-    wx.navigateTo({
-      url: '/pages/auth/login',
-    })
-  },
-
-  goPage(e) {
-    let page = e.currentTarget.dataset.page;
-    wx.navigateTo({
-      url: page,
-    })
   }
 })

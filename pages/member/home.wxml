@@ -91,7 +91,7 @@
     <view class="item">
       我的积分
     </view>
-    <view class="item">
+    <view class="item" bindtap="goPage" data-page="/pages/member/setting">
       设置
     </view>
   </view>

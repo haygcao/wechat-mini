@@ -1,6 +1,4 @@
-import {
-  user
-} from '../../api/index'
+const app = getApp();
 
 Page({
 
@@ -8,14 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    token: wx.getStorageSync('access_token'),
-    user: null
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -28,7 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getUser();
+
   },
 
   /**
@@ -66,26 +65,21 @@ Page({
 
   },
 
-  getUser() {
-    if (this.data.token) {
-      user.info().then(res => {
-        this.setData({
-          user: res
-        });
-      });
-    }
-  },
-
-  goLogin() {
+  openUserProtocol() {
     wx.navigateTo({
-      url: '/pages/auth/login',
+      url: '/pages/common/web?url=' + app.globalData.user_protocol,
     })
   },
 
-  goPage(e) {
-    let page = e.currentTarget.dataset.page;
+  openUserPrivateProtocol() {
     wx.navigateTo({
-      url: page,
+      url: '/pages/common/web?url=' + app.globalData.user_private_protocol,
+    })
+  },
+
+  openAboutUs() {
+    wx.navigateTo({
+      url: '/pages/common/web?url=' + app.globalData.aboutus,
     })
   }
 })

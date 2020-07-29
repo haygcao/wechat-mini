@@ -6,7 +6,9 @@
     "custom-tab-bar/index",
     "components/course/course",
     "pages/search/search",
-    "pages/course/list"
+    "pages/course/list",
+    "pages/member/setting",
+    "pages/common/web"
   ],
   "window": {
     "backgroundTextStyle": "light",

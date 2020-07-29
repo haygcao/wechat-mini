@@ -1,0 +1,8 @@
+<view class="setting-box">
+  <view class="item" bindtap="openUserProtocol">用户协议</view>
+  <view class="item last" bindtap="openUserPrivateProtocol">隐私协议</view>
+</view>
+
+<view class="setting-box">
+  <view class="item last" bindtap="openAboutUs">关于我们</view>
+</view>

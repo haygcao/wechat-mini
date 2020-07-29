@@ -1,0 +1,30 @@
+page {
+  background-color: #f2f2f2;
+}
+
+.setting-box {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: white;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.setting-box>.item {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  float: left;
+  color: #333;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.setting-box>.item.last {
+  border-bottom: 0;
+}
