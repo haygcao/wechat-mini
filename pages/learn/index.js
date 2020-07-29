@@ -51,8 +51,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getCourses();
-    this.getHistory();
+    this.getCourses(true);
+    this.getHistory(true);
   },
 
   /**
@@ -99,8 +99,14 @@ Page({
     }
   },
 
-  getCourses() {
-    // 购买课程
+  getCourses(reset = false) {
+    if (reset) {
+      this.setData({
+        'pagination.buyCourse.page': 1,
+        'pagination.buyCourse.is_over': false,
+        'courses.buyCourse': []
+      });
+    }
     user.courses(this.data.pagination.buyCourse).then(res => {
       let list = res.data;
       if (list.length === 0) {
@@ -117,8 +123,14 @@ Page({
     })
   },
 
-  getHistory() {
-    // 观看历史
+  getHistory(reset = false) {
+    if (reset) {
+      this.setData({
+        'pagination.history.page': 1,
+        'pagination.history.is_over': false,
+        'courses.history': []
+      });
+    }
     user.historyCourses(this.data.pagination.history).then(res => {
       let list = res.data;
       if (list.length === 0) {
