@@ -1,7 +1,25 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/auth/login",
-    "pages/auth/login-password"
+    "pages/member/home",
+    "custom-tab-bar/index",
+    "components/course/course",
+    "pages/search/search",
+    "pages/course/list",
+    "pages/member/setting",
+    "pages/common/web",
+    "pages/learn/index",
+    "pages/member/order",
+    "pages/member/collect",
+    "pages/member/message",
+    "pages/member/promoCode",
+    "pages/member/credit1",
+    "pages/member/ib_withdraw",
+    "pages/member/withdraw_records",
+    "pages/role/index",
+    "pages/course/detail",
+    "pages/course/video"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -10,7 +28,34 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/course/list",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/learn/index",
+        "text": "学习"
+      },
+      {
+        "pagePath": "pages/member/home",
+        "text": "我的"
+      }
+    ]
+  },
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "meedu-course": "./components/course/course",
+    "meedu-none": "./components/none/none"
   }
 }

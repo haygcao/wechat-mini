@@ -1,0 +1,21 @@
+<view class="course-item" bindtap="goDetail">
+  <view class="course-thumb">
+    <image src="{{thumb}}" />
+  </view>
+  <view class="course-info-box">
+    <view class="course-name">{{name}}</view>
+    <view class="course-info">
+      <view class="user-count">
+        <text class="iconfont iconsubscribe"></text> 
+        <text>{{userCount}}</text>
+      </view>
+      <view class="category">
+        <text class="iconfont icontag1"></text>
+        <text>{{category}}</text>
+      </view>
+    </view>
+    <view class="course-charge">
+      <text class="charge">￥{{charge}}</text>
+    </view>
+  </view>
+</view>

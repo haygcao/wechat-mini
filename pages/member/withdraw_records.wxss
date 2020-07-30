@@ -1,0 +1,61 @@
+.scroll-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+}
+
+.records-box {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.records-box>.item {
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 15px;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+}
+
+.records-box>.item>.content {
+  flex: 1;
+}
+
+.records-box>.item>.content>.remark {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.records-box>.item>.content>.date {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(163, 163, 163, 1);
+  line-height: 1;
+}
+
+.records-box>.item>.sum {
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #FF4D4F;
+  line-height: 1;
+}
+
+.records-box>.item>.sum.income {
+  color: green;
+}

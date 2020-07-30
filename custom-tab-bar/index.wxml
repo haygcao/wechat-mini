@@ -1,0 +1,34 @@
+<view class="tabbar">
+  <view class="tabbar-item" data-active="index" bindtap="switch">
+    <view class="icon">
+      <image src="../images/icons/home.png"/>
+    </view>
+    <view class="name">
+      <text>首页</text>
+    </view>
+  </view>
+  <view class="tabbar-item" data-active="course" bindtap="switch">
+    <view class="icon">
+      <image src="../images/icons/course.png"/>
+    </view>
+    <view class="name">
+      <text>课程</text>
+    </view>
+  </view>
+  <view class="tabbar-item" data-active="learn" bindtap="switch">
+    <view class="icon">
+      <image src="../images/icons/order.png"/>
+    </view>
+    <view class="name">
+      <text>学习</text>
+    </view>
+  </view>
+  <view class="tabbar-item" data-active="member" bindtap="switch">
+    <view class="icon">
+      <image src="../images/icons/user.png"/>
+    </view>
+    <view class="name">
+      <text>我的</text>
+    </view>
+  </view>
+</view>

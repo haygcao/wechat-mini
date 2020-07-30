@@ -1,0 +1,176 @@
+page {
+  background-color: #f2f2f2;
+}
+
+.user-info {
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 15px;
+  background: linear-gradient(180deg, rgba(23, 132, 237, 1) 0%, rgba(23, 132, 237, 1) 44%, #f2f2f2 100%);
+}
+
+.user-info>.info {
+  width: 100%;
+  height: auto;
+  float: left;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.user-info>.info>.avatar {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
+
+.user-info>.info>.avatar>image {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.user-info>.info>.nickname {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  color: white;
+}
+
+.user-info>.data {
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 30px 15px;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+}
+
+.user-info>.data>.people-count {
+  flex: 1;
+}
+
+.user-info>.data>.people-count>.value {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.user-info>.data>.people-count>.name {
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.user-info>.data>.balance-sum {
+  flex: 1;
+}
+
+.user-info>.data>.balance-sum>.value {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.user-info>.data>.balance-sum>.name {
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.user-info>.data>.buttons {
+  margin-left: 15px;
+  padding-top: 10px;
+}
+
+.user-info>.data>.buttons>.withdraw {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 14px;
+  font-weight: normal;
+  background-color: white;
+  border: 1px solid #1784ED;
+  border-radius: 15px;
+  color: #1784ED;
+}
+
+
+.promo_code-box {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 15px;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.promo_code-box>.promo_code {
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 30px 15px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.promo_code-box>.promo_code>.content {
+  width: 100%;
+  height: auto;
+  float: left;
+  text-align: center;
+}
+
+.promo_code-box>.promo_code>.content>.value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.promo_code-box>.promo_code>.content>.create-promo_code {
+  display: block;
+  width: 100%;
+  height: 36px;
+  background-color: #1784ED;
+  line-height: 36px;
+  color: white;
+  text-align: center;
+  border-radius: 18px;
+}
+
+.promo_code-box>.promo_code>.buttons {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 30px;
+}
+
+.promo_code-box>.promo_code>.buttons>.copy {
+  display: block;
+  width: 100%;
+  height: 36px;
+  background-color: #1784ED;
+  line-height: 36px;
+  color: white;
+  text-align: center;
+  border-radius: 18px;
+}
+
+.promo_code-box>.promo_code>.desc {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 30px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, .6);
+  line-height: 20px;
+}

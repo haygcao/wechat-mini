@@ -1,11 +1,15 @@
-// pages/auth/login-password.js
+import {
+  home
+} from '../../api/index'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    courses: [],
+    keywords: ''
   },
 
   /**
@@ -62,5 +66,28 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  search() {
+    if (this.data.keywords.length === 0) {
+      wx.showToast({
+        title: '请输入关键字',
+        icon: 'none'
+      })
+      return;
+    }
+
+    home.search({
+      keywords: this.data.keywords
+    }).then(res => {
+      this.setData({
+        courses: res.data
+      });
+    })
+  },
+  inputSync(e) {
+    this.setData({
+      keywords: e.detail.value,
+    });
   }
 })

@@ -1,0 +1,95 @@
+<view class="user-banner">
+
+  <view class="user-info" bindtap="goLogin" wx:if="{{!user}}">
+    <view class="avatar">
+      <image src="../../images/default_avatar.png" />
+    </view>
+    <view class="info">
+      <view class="nickname">请登录</view>
+      <view class="role">
+        <text class="role-text">登录后查看</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="user-info" wx:else>
+    <view class="avatar">
+      <image src="{{user.avatar}}" />
+    </view>
+    <view class="info">
+      <view class="nickname">{{user.nick_name}}</view>
+      <view class="role">
+        <text class="role-text">{{user.role ? user.role.name : '免费会员'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="member-banners">
+    <view class="item" bindtap="goPage" data-page="/pages/member/order">
+      <view class="icon">
+        <image src="../../images/icons/member/order.png" />
+      </view>
+      <view class="name">
+        <text>我的订单</text>
+      </view>
+    </view>
+
+    <view class="item" bindtap="goPage" data-page="/pages/member/collect">
+      <view class="icon">
+        <image src="../../images/icons/member/collect.png" />
+      </view>
+      <view class="name">
+        <text>我的收藏</text>
+      </view>
+    </view>
+
+    <view class="item" bindtap="goPage" data-page="/pages/member/message">
+      <view class="icon">
+        <image src="../../images/icons/member/message.png" />
+      </view>
+      <view class="name">
+        <text>我的消息</text>
+      </view>
+    </view>
+
+    <view class="item" bindtap="goPage" data-page="/pages/role/index">
+      <view class="icon">
+        <image src="../../images/icons/member/role.png" />
+      </view>
+      <view class="name">
+        <text>会员中心</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="role-expired-at">
+    <view class="icon">
+      <image src="../../images/icons/vip.png" />
+    </view>
+    <view class="text" wx:if="{{!user}}">
+      登录后查看
+    </view>
+    <view class="text" wx:elif="{{user.role}}">
+      您的会员{{user.role_expired_at}}到期
+    </view>
+    <view class="text" wx:else>
+      <text>开通会员享更多课程特权</text>
+      <text class="detail">了解详情</text>
+    </view>
+  </view>
+
+</view>
+
+<view class="member-menus-box">
+  <view class="member-menus">
+    <view class="item" bindtap="goPage" data-page="/pages/member/promoCode">
+      我的邀请
+    </view>
+    <view class="item" bindtap="goPage" data-page="/pages/member/credit1">
+      我的积分
+    </view>
+    <view class="item" bindtap="goPage" data-page="/pages/member/setting">
+      设置
+    </view>
+  </view>
+</view>

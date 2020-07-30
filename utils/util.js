@@ -27,7 +27,16 @@ const durationForHuman = duration => {
   return minutes + ':' + seconds;
 }
 
+const loginCheck = () => {
+  if (!wx.getStorageSync('access_token')) {
+    wx.navigateTo({
+      url: '/pages/auth/login',
+    })
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
-  durationForHuman: durationForHuman
+  durationForHuman: durationForHuman,
+  loginCheck: loginCheck
 }

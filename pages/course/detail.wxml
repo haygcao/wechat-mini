@@ -1,0 +1,84 @@
+<wxs src="../../wxs/utils.wxs" module="utils" />
+
+<view class="course-thumb">
+  <image src="{{course.thumb}}" />
+</view>
+
+<view class="navs">
+  <view class="item {{navTab === 'desc' ? 'active' : ''}}" bindtap="switchNavTab" data-tab="desc">课程介绍</view>
+  <view class="item {{navTab === 'menu' ? 'active' : ''}}" bindtap="switchNavTab" data-tab="menu">课程目录</view>
+  <view class="item {{navTab === 'comment' ? 'active' : ''}}" bindtap="switchNavTab" data-tab="comment">讨论区</view>
+</view>
+
+<view class="desc" hidden="{{navTab!=='desc'}}">
+  <rich-text nodes="{{course.render_desc}}"></rich-text>
+</view>
+
+<view class="menus" hidden="{{navTab!=='menu'}}">
+  <block wx:if="{{chapters.length === 0}}">
+    <view class="video-item" wx:for="{{videos[0]}}" wx:key="id" wx:for-item="item" bindtap="goVideo" data-video-id="{{item.id}}">
+      <view class="name">
+        <text class="free" wx:if="{{item.charge===0}}">试看</text>
+        {{item.title}}
+      </view>
+      <view class="duration">{{utils.durationForHuman(item.duration)}}</view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="chapter-item" wx:for="{{chapters}}" wx:key="id" wx:for-item="chapter">
+      <view class="chapter-name">{{chapter.title}}</view>
+      <view class="video-item" wx:for="{{videos[chapter.id]}}" wx:key="id" wx:for-item="item" bindtap="goVideo" data-video-id="{{item.id}}">
+        <view class="name">
+          <text class="free" wx:if="{{item.charge===0}}">试看</text>
+          {{item.title}}
+        </view>
+        <view class="duration">{{utils.durationForHuman(item.duration)}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="comments" hidden="{{navTab!=='comment'}}">
+  <block wx:if="{{comments.length > 0}}">
+    <view class="comment-item" wx:for="{{comments}}" wx:key="id" wx:for-item="comment">
+      <view class="user">
+        <view class="avatar">
+          <image src="{{commentUsers[comment.user_id].avatar}}" />
+        </view>
+        <view class="nickname">
+          <view class="value">{{commentUsers[comment.user_id].nick_name}}</view>
+          <view class="date">{{comment.created_at}}</view>
+        </view>
+      </view>
+      <view class="content">
+        <rich-text nodes="{{comment.render_content}}"></rich-text>
+      </view>
+    </view>
+  </block>
+  <meedu-none wx:else></meedu-none>
+</view>
+
+<view class="hr"></view>
+
+<view class="bottom-bar" hidden="{{navTab === 'comment'}}">
+  <view class="colletion {{isCollect ? 'active' : ''}}" bindtap="collectAction">
+    <text class="iconfont iconlike"></text>
+  </view>
+  <view class="buttons">
+    <block wx:if="{{course.charge === 0 || isBuy === true}}">
+      <text class="start-learn-button">开始学习</text>
+    </block>
+    <block wx:else>
+      <text class="buy-button">购买课程 ￥{{course.charge}}</text>
+      <text class="buy-role-button" bindtap="goRole">开通会员免费看</text>
+    </block>
+  </view>
+</view>
+
+<view class="comment-bottom-bar" hidden="{{navTab !== 'comment'}}">
+  <view class="input">
+    <input type="text" placeholder="说点什么吧" bindinput="inputCommentContent" value="{{commentContent}}" />
+  </view>
+  <view class="send-button {{commentContent.length > 0 ? 'active' : ''}}" bindtap="createComment">发布</view>
+</view>

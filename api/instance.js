@@ -1,4 +1,4 @@
-const baseUrl = 'https://58hualong.com'
+const baseUrl = 'http://192.168.1.2:8000'
 
 export default function instance(params) {
   return new Promise((resolve, reject) => {
@@ -9,7 +9,8 @@ export default function instance(params) {
       data: params.data || {},
       header: {
         Authorization: `Bearer ${wx.getStorageSync('access_token')}`,
-        'third-session': wx.getStorageSync('thirdSession') || ''
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
       },
       success(res) {
         if (res.statusCode !== 200) {
@@ -21,8 +22,19 @@ export default function instance(params) {
           return;
         }
         if (res.data.code === 0) {
-          resolve(res.data.data || {})
+          resolve(res.data.data)
         } else {
+          if (res.data.code === 401) {
+            // 需要重新登录
+            if (wx.getStorageSync('access_token')) {
+              wx.removeStorageSync('access_token');
+              wx.navigateTo({
+                url: '/pages/auth/login',
+              })
+              return
+            }
+          }
+          
           reject(res.data.message)
         }
       },

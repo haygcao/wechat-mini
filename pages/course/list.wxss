@@ -1,0 +1,42 @@
+.course-category-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  height: 30px;
+  box-sizing: border-box;
+  padding-top: 5px;
+  white-space: nowrap;
+}
+
+.category-item {
+  display: inline;
+  font-size: 14px;
+  padding: 0 15px;
+  margin-left: 10px;
+}
+
+.category-item.active {
+  background-color: #0b76de;
+  border-radius: 15px;
+  color: white;
+}
+
+.course-container {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  z-index: 11;
+}
+
+.course-list {
+  width: 100%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+}

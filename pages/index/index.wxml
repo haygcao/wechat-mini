@@ -1,0 +1,30 @@
+<!--logo栏目-->
+<view class="topbar">
+	<image src="../../images/logo.png" class="logo" />
+	<view class="search-bar" bindtap="goSearch">
+		<image src="../../images/icons/search.png" class="search-bar-icon" />
+		<view class="text">搜索您想要的</view>
+	</view>
+</view>
+
+<!--幻灯片栏-->
+<view class="swiper-box">
+	<swiper indicator-dots="true" autoplay="true" indicator-color="rgba(0,0,0,.2)"
+		indicator-active-color="rgba(255,255,255,1)">
+		<swiper-item wx:for="{{sliders}}" wx:for-item="slider" wx:key="id">
+			<image class="swiper-image-item" src="{{slider.thumb}}" />
+		</swiper-item>
+	</swiper>
+</view>
+
+<!--首页推荐-->
+<view class="index-banners-box">
+	<view class="index-banner-item" wx:for="{{banners}}" wx:for-item="banner" wx:key="id">
+		<view class="title">{{banner.name}}</view>
+		<view class="courses-box">
+			<meedu-course name="{{course.title}}" thumb="{{course.thumb}}" id="{{course.id}}" charge="{{course.charge}}"
+				user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{banner.courses}}"
+				wx:for-item="course" wx:key="id"></meedu-course>
+		</view>
+	</view>
+</view>

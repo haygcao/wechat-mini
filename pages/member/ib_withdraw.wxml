@@ -1,0 +1,59 @@
+<view class="box">
+  <view class="invite-balance-box">
+    <view class="balance-value">
+      <text>￥{{user.invite_balance}}</text>
+    </view>
+    <view class="buttons">
+      <view class="showWithdraw" bindtap="showWithdraw">提现</view>
+      <view class="showRecords" bindtap="showWithdrawRecords">提现记录</view>
+    </view>
+  </view>
+</view>
+
+<scroll-view class="scroll-box" scroll-y="true" bindscrolltolower="loadMore">
+  <view class="records-box">
+    <block wx:if="{{records.length > 0}}">
+      <view class="item" wx:for="{{records}}" wx:key="id" wx:for-item="record">
+        <view class="content">
+          <view class="remark">{{record.desc}}</view>
+          <view class="date">{{record.created_at}}</view>
+        </view>
+        <view class="sum {{record.total > 0 ? 'income' : ''}}">
+          {{record.total > 0 ? '+' + record.total : record.total}}
+        </view>
+      </view>
+    </block>
+    <meedu-none wx:else></meedu-none>
+  </view>
+</scroll-view>
+
+<view class="withdraw-box-shadow" wx:if="{{showBox}}">
+  <view class="withdraw-box">
+
+    <view class="input">
+      <view class="name">支付宝账号</view>
+      <view class="value">
+        <input type="text" bindinput="inputChange" data-key="account" />
+      </view>
+    </view>
+    <view class="input">
+      <view class="name">姓名</view>
+      <view class="value">
+        <input type="text" bindinput="inputChange" data-key="name" />
+      </view>
+    </view>
+    <view class="input">
+      <view class="name">提现金额</view>
+      <view class="value">
+        <input type="number" bindinput="inputChange" data-key="total" />
+      </view>
+    </view>
+
+    <view class="input">
+      <text class="confirm-button" bindtap="confirmWithdraw">确认提现</text>
+    </view>
+    <view class="input">
+      <text class="cancel-button" bindtap="cancelWithdraw">取消提现</text>
+    </view>
+  </view>
+</view>

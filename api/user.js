@@ -1,83 +1,107 @@
 import instance from './instance'
 
-export function passwordLogin(data) {
-    return instance({
-        method: 'POST',
-        url: '/api/v2/login/password',
-        data: data
-    })
+
+export function info() {
+  return instance({
+    url: '/api/v2/member/detail'
+  })
 }
 
-export function mobileLogin(data) {
-    return instance({
-        method: 'POST',
-        url: '/api/v2/login/mobile',
-        data: data
-    })
+export function orders(data) {
+  return instance({
+    url: '/api/v2/member/orders',
+    data: data
+  })
 }
 
-export function captchaImage(data) {
-    return instance({
-        method: 'get',
-        url: '/api/v2/captcha/image',
-        data: data
-    })
+export function credit1Records(data) {
+  return instance({
+    url: '/api/v2/member/credit1Records',
+    data: data
+  })
 }
 
-export function captchaSms(data) {
-    return instance({
-        method: 'POST',
-        url: '/api/v2/captcha/sms',
-        data: data // scene[login:登录,register:注册,password_reset:密码重置]
-    })
+export function inviteUsers(data) {
+  return instance({
+    url: '/api/v2/member/inviteUsers',
+    data: data
+  })
 }
 
-export function getUserInfo() {
-    return instance({
-        url: '/api/v2/member/detail'
-    })
+export function promoCode(data) {
+  return instance({
+    url: '/api/v2/member/promoCode',
+    data: data
+  })
 }
 
-export function getUserOrders(data) {
-    return instance({
-        url: '/api/v2/member/orders',
-        data: data
-    })
+export function createPromoCode(data) {
+  return instance({
+    method: 'POST',
+    url: '/api/v2/member/promoCode',
+    data: data
+  })
+}
+
+export function messages(data) {
+  return instance({
+    url: '/api/v2/member/messages',
+    data: data
+  })
+}
+
+export function messageMarkRead(id) {
+  return instance({
+    url: '/api/v2/member/notificationMarkAsRead/' + id
+  })
 }
 
 export function getUserRoles(data) {
-    return instance({
-        url: '/api/v2/member/roles',
-        data: data
-    })
+  return instance({
+    url: '/api/v2/member/roles',
+    data: data
+  })
 }
 
-
-export function getUserCourses(data) {
+export function courses(data) {
   return instance({
     url: '/api/v2/member/courses',
     data: data
   })
 }
 
-export function getPromoCode() {
+export function collectionCourses(data) {
   return instance({
-    url: '/api/v2/member/promoCode',
-    data: {}
+    url: '/api/v2/member/courses/like',
+    data: data
   })
 }
 
-export function createPromoCode() {
+export function historyCourses(data) {
+  return instance({
+    url: '/api/v2/member/courses/history',
+    data: data
+  })
+}
+
+export function inviteBalanceRecords(data) {
+  return instance({
+    url: '/api/v2/member/inviteBalanceRecords',
+    data: data
+  })
+}
+
+export function withdrawRecords(data) {
+  return instance({
+    url: '/api/v2/member/withdrawRecords',
+    data: data
+  })
+}
+
+export function createWithdraw(data) {
   return instance({
     method: 'POST',
-    url: '/api/v2/member/promoCode',
-    data: {}
-  })
-}
-
-export function getInviteBalanceRecrods(data) {
-  return instance({
-    url: '/api/v2/member/inviteBalanceRecrods',
+    url: '/api/v2/member/withdraw',
     data: data
   })
 }

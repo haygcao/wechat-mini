@@ -1,0 +1,56 @@
+<view class="user-info">
+  <view class="info">
+    <view class="avatar">
+      <image src="{{user.avatar}}" />
+    </view>
+    <view class="nickname">
+      {{user.nick_name}}
+    </view>
+  </view>
+
+  <view class="data">
+    <view class="people-count">
+      <view class="value">{{invite_user_count}}</view>
+      <view class="name">邀请人数</view>
+    </view>
+    <view class="balance-sum">
+      <view class="value">{{user.invite_balance}}</view>
+      <view class="name">邀请余额(元)</view>
+    </view>
+    <view class="buttons">
+      <text class="withdraw" bindtap="goWithdraw">去提现</text>
+    </view>
+  </view>
+
+</view>
+
+<view class="promo_code-box" wx:if="{{promo_code.length > 0}}">
+  <view class="promo_code">
+    <view class="content">
+      <text class="value">{{promo_code}}</text>
+    </view>
+    <view class="buttons">
+      <text class="copy" bindtap="copy">复制</text>
+    </view>
+
+    <view class="desc">
+      <view>
+        1.使用该优惠码的用户将获得{{ invited_user_reward }}元抵扣。
+      </view>
+      <view>
+        2.当用户使用您的优惠码支付并完成订单的时候，您也将获得{{ invite_user_reward }}元奖励。
+      </view>
+      <view>
+        3.使用您的优惠码完成支付的用户将会自动成为您的下级，TA的每一笔已支付订单您都将享有{{ per_order_draw * 100 }}%的抽成。
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="promo_code-box" wx:else>
+  <view class="promo_code">
+    <view class="content">
+      <text class="create-promo_code" bindtap="createPromoCode">创建邀请码</text>
+    </view>
+  </view>
+</view>

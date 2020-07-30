@@ -1,2 +1,9 @@
-<!--pages/auth/login.wxml-->
-<text>pages/auth/login.wxml</text>
+
+<view class="login-button-box">
+  <button wx:if="{{canIUse}}" open-type="getPhoneNumber" bindgetphonenumber="bindGetUserInfo" class="login-button">授权登录</button>
+  <view wx:else>请升级微信版本</view>
+</view>
+
+<view class="protocol">
+  登录即代表您同意 <text bindtap="openUserProtocol">用户协议</text> 和 <text bindtap="openUserPrivateProtocol">隐私协议</text>
+</view>

@@ -1,0 +1,70 @@
+.scroll-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+}
+
+.messages-list-box {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.messages-list-box>.item {
+  width: 100%;
+  height: auto;
+  float: left;
+  display: flex;
+  box-sizing: border-box;
+  padding: 15px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.messages-list-box>.item>.icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+}
+
+.messages-list-box>.item>.icon>image {
+  width: 48px;
+  height: 48px;
+}
+
+.messages-list-box>.item>.content {
+  flex: 1;
+}
+
+.messages-list-box>.item>.content>.date {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(204, 204, 204, 1);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.messages-list-box>.item>.content>.date>.dot {
+  margin-left: 8px;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.messages-list-box>.item>.content>.text {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 1;
+}
