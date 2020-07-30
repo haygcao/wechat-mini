@@ -22,7 +22,9 @@
 	<view class="index-banner-item" wx:for="{{banners}}" wx:for-item="banner" wx:key="id">
 		<view class="title">{{banner.name}}</view>
 		<view class="courses-box">
-			<meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}" user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{banner.courses}}" wx:for-item="course" wx:key="id"></meedu-course>
+			<meedu-course name="{{course.title}}" thumb="{{course.thumb}}" id="{{course.id}}" charge="{{course.charge}}"
+				user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{banner.courses}}"
+				wx:for-item="course" wx:key="id"></meedu-course>
 		</view>
 	</view>
 </view>

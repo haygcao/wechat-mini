@@ -6,7 +6,7 @@
 
 <scroll-view class="course-container" scroll-y="true" bindscrolltolower="loadMore">
   <view class="course-list" wx:if="{{courses.length > 0}}">
-    <meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}"
+    <meedu-course name="{{course.title}}" thumb="{{course.thumb}}" charge="{{course.charge}}" id="{{course.id}}"
       user-count="{{course.user_count}}" category="{{course.category.name}}" wx:for="{{courses}}" wx:for-item="course"
       wx:key="id"></meedu-course>
   </view>

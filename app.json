@@ -17,7 +17,9 @@
     "pages/member/credit1",
     "pages/member/ib_withdraw",
     "pages/member/withdraw_records",
-    "pages/role/index"
+    "pages/role/index",
+    "pages/course/detail",
+    "pages/course/video"
   ],
   "window": {
     "backgroundTextStyle": "light",

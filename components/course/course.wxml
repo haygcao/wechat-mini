@@ -1,4 +1,4 @@
-<view class="course-item">
+<view class="course-item" bindtap="goDetail">
   <view class="course-thumb">
     <image src="{{thumb}}" />
   </view>

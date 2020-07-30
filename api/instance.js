@@ -22,7 +22,7 @@ export default function instance(params) {
           return;
         }
         if (res.data.code === 0) {
-          resolve(res.data.data || {})
+          resolve(res.data.data)
         } else {
           if (res.data.code === 401) {
             // 需要重新登录
@@ -34,6 +34,7 @@ export default function instance(params) {
               return
             }
           }
+          
           reject(res.data.message)
         }
       },

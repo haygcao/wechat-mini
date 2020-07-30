@@ -1,18 +1,26 @@
 import instance from './instance'
 
-export function getVideoInfo(videoId) {
+export function info(videoId) {
     return instance({
         url: `/api/v2/video/${videoId}`
     })
 }
 
-export function getVideoComments(videoId) {
+export function comments(videoId) {
     return instance({
         url: `/api/v2/video/${videoId}/comments`
     })
 }
 
-export function getVideoUrl(videoId) {
+export function createComment(videoId, params) {
+    return instance({
+        method: 'POST',
+        url: `/api/v2/video/${videoId}/comments`,
+        data: params
+    })
+}
+
+export function playUrl(videoId) {
     return instance({
         url: `/api/v2/video/${videoId}/playinfo`
     })

@@ -20,14 +20,22 @@ export function detail(courseId) {
     })
 }
 
-export function getCourseComment(courseId) {
-    return instance({
-        url: `/api/v2/course/${courseId}/comment`
-    })
-}
-
 export function comments(courseId) {
     return instance({
         url: `/api/v2/course/${courseId}/comments`
+    })
+}
+
+export function createComment(courseId, params) {
+    return instance({
+        method: 'POST',
+        url: `/api/v2/course/${courseId}/comment`,
+        data: params
+    })
+}
+
+export function like(courseId) {
+    return instance({
+        url: `/api/v2/course/${courseId}/like`
     })
 }
