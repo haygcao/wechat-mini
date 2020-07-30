@@ -79,7 +79,7 @@ page {
   padding: 1px 3px;
   background-color: rgba(23, 132, 237, 1);
   color: white;
-  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 3px;
   font-size: 10px;
 }
@@ -181,8 +181,9 @@ page {
   z-index: 99;
   display: flex;
   box-sizing: border-box;
-  padding: 5px 15px;
+  padding: 5px 15px 4px 15px;
   background-color: white;
+  border-top: 1px solid #f2f2f2;
 }
 
 .bottom-bar>.colletion {

@@ -15,7 +15,7 @@ export function comments(videoId) {
 export function createComment(videoId, params) {
     return instance({
         method: 'POST',
-        url: `/api/v2/video/${videoId}/comments`,
+        url: `/api/v2/video/${videoId}/comment`,
         data: params
     })
 }

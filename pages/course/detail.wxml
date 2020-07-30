@@ -18,8 +18,8 @@
   <block wx:if="{{chapters.length === 0}}">
     <view class="video-item" wx:for="{{videos[0]}}" wx:key="id" wx:for-item="item" bindtap="goVideo" data-video-id="{{item.id}}">
       <view class="name">
-        {{item.title}}
         <text class="free" wx:if="{{item.charge===0}}">试看</text>
+        {{item.title}}
       </view>
       <view class="duration">{{utils.durationForHuman(item.duration)}}</view>
     </view>
@@ -29,7 +29,10 @@
     <view class="chapter-item" wx:for="{{chapters}}" wx:key="id" wx:for-item="chapter">
       <view class="chapter-name">{{chapter.title}}</view>
       <view class="video-item" wx:for="{{videos[chapter.id]}}" wx:key="id" wx:for-item="item" bindtap="goVideo" data-video-id="{{item.id}}">
-        <view class="name">{{item.title}}</view>
+        <view class="name">
+          <text class="free" wx:if="{{item.charge===0}}">试看</text>
+          {{item.title}}
+        </view>
         <view class="duration">{{utils.durationForHuman(item.duration)}}</view>
       </view>
     </view>
