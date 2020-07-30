@@ -1,0 +1,33 @@
+<view class="user-info" wx:if="{{user!==null}}">
+  <view class="avatar">
+    <image src="{{user.avatar}}" />
+  </view>
+  <view class="role">
+    <view class="role-date" wx:if="{{user.role}}">
+      您的{{user.role.name}}会员将于{{user.role_expired_at}}到期
+    </view>
+    <view class="role-date" wx:else>
+      您当前为免费会员
+    </view>
+    <view class="desc">
+      购买后有效期顺延
+    </view>
+  </view>
+</view>
+
+<view class="role-box">
+  <view class="item {{order.id === role.id ? 'active' : ''}} {{index === roles.length-1 ? 'last' : ''}}"
+    wx:for="{{roles}}" wx:for-index="{{index}}" wx:key="id" wx:for-item="role" bindtap="choice" data-id="{{role.id}}"
+    data-charge="{{role.charge}}" data-name="{{role.name}}">
+    <view class="name">{{role.name}}</view>
+    <view class="charge">￥{{role.charge}}</view>
+    <view class="days">{{role.expire_days}}天</view>
+  </view>
+</view>
+
+<view class="bottom-bar">
+  <view class="total-charge">
+    <text class="value">￥{{order.total}}</text>
+  </view>
+  <view class="buy-button" bindtap="buy">立即购买</view>
+</view>

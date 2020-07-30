@@ -16,7 +16,8 @@
     "pages/member/promoCode",
     "pages/member/credit1",
     "pages/member/ib_withdraw",
-    "pages/member/withdraw_records"
+    "pages/member/withdraw_records",
+    "pages/role/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
