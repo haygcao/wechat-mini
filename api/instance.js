@@ -1,4 +1,5 @@
 const baseUrl = 'http://192.168.1.2:8000'
+// const baseUrl = 'https://all.meedu.tech'
 
 export default function instance(params) {
   return new Promise((resolve, reject) => {
@@ -10,7 +11,8 @@ export default function instance(params) {
       header: {
         Authorization: `Bearer ${wx.getStorageSync('access_token')}`,
         'Content-Type': 'application/json',
-        Accept: 'application/json'
+        Accept: 'application/json',
+        'meedu-platform': 'MINI'
       },
       success(res) {
         if (res.statusCode !== 200) {

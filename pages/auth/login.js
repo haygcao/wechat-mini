@@ -10,8 +10,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    redirect: null
+    step1: true,
+    step2: false,
+    redirect: null,
+    userInfo: null
   },
 
   /**
@@ -37,9 +39,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -76,15 +76,57 @@ Page({
 
   },
 
-  bindGetUserInfo(e) {
+  getUserInfo(e) {
     let data = e.detail;
 
-    login.wxMobileLogin({
+    this.setData({
+      userInfo: data
+    });
+
+    login.wxLogin({
       openid: wx.getStorageSync('openid'),
       iv: data.iv,
       rawData: data.rawData,
       signature: data.signature,
       encryptedData: data.encryptedData
+    }).then(res => {
+      wx.setStorageSync('access_token', res.token);
+
+      if (this.data.redirect) {
+        wx.redirectTo({
+          url: this.data.redirect,
+        })
+      } else {
+        wx.navigateBack({
+          delta: 0,
+        })
+      }
+    }).catch(e => {
+      this.setData({
+        step1: false,
+        step2: true
+      })
+
+      wx.showToast({
+        icon: 'none',
+        title: '请绑定手机号',
+      })
+    });
+  },
+
+  getPhoneNumber(e) {
+    let data = e.detail;
+
+    login.wxMobileLogin({
+      openid: wx.getStorageSync('openid'),
+      iv: data.iv,
+      encryptedData: data.encryptedData,
+      userInfo: {
+        rawData: this.data.userInfo.rawData,
+        signature: this.data.userInfo.signature,
+        encryptedData: this.data.userInfo.encryptedData,
+        iv: this.data.userInfo.iv
+      }
     }).then(res => {
       wx.setStorageSync('access_token', res.token);
 
