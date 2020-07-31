@@ -10,7 +10,8 @@ export default function instance(params) {
       header: {
         Authorization: `Bearer ${wx.getStorageSync('access_token')}`,
         'Content-Type': 'application/json',
-        Accept: 'application/json'
+        Accept: 'application/json',
+        'meedu-platform': 'MINI'
       },
       success(res) {
         if (res.statusCode !== 200) {
