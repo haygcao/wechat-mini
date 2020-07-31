@@ -24,7 +24,8 @@ Page({
     commentContent: '',
     playInfo: [],
     playUrl: '',
-    poster: ''
+    poster: '',
+    lastPlaySeconds: 0
   },
 
   /**
@@ -211,5 +212,30 @@ Page({
     wx.redirectTo({
       url: '/pages/course/video?id=' + videoId,
     })
+  },
+
+  playEnd(e) {
+    // 播放统计
+    video.record(this.data.videoId, {
+      duration: this.data.video.duration
+    }).then(res => {
+      console.log('播放完成', res);
+    })
+  },
+
+  playTimeUpdate(e) {
+    let seconds = parseInt(e.detail.currentTime);
+    if (seconds - this.data.lastPlaySeconds > 10) {
+      this.setData({
+        lastPlaySeconds: seconds
+      });
+
+      // 播放统计
+      video.record(this.data.videoId, {
+        duration: seconds
+      }).then(res => {
+        console.log('播放进度变更', res);
+      })
+    }
   }
 })

@@ -2,7 +2,8 @@
 
 <view class="play-box">
   <block wx:if="{{isBuy}}">
-    <video src="{{playUrl}}" poster="{{poster}}" title="{{video.title}}" poster-for-crawler="{{course.thumb}}"></video>
+    <video src="{{playUrl}}" poster="{{poster}}" title="{{video.title}}" poster-for-crawler="{{course.thumb}}"
+      bindended="playEnd" bindtimeupdate="playTimeUpdate"></video>
   </block>
   <block wx:else>
     <view class="no-auth">
@@ -23,8 +24,8 @@
 
 <view class="menus" hidden="{{navTab!=='menu'}}">
   <block wx:if="{{chapters.length === 0}}">
-    <view class="video-item {{videoId == item.id ? 'active' : ''}}" wx:for="{{videos[0]}}" wx:key="id" wx:for-item="item" bindtap="goVideo"
-      data-video-id="{{item.id}}">
+    <view class="video-item {{videoId == item.id ? 'active' : ''}}" wx:for="{{videos[0]}}" wx:key="id"
+      wx:for-item="item" bindtap="goVideo" data-video-id="{{item.id}}">
       <view class="name">
         <text class="free" wx:if="{{item.charge===0}}">试看</text>
         {{item.title}}
@@ -36,8 +37,8 @@
   <block wx:else>
     <view class="chapter-item" wx:for="{{chapters}}" wx:key="id" wx:for-item="chapter">
       <view class="chapter-name">{{chapter.title}}</view>
-      <view class="video-item {{videoId == item.id ? 'active' : ''}}" wx:for="{{videos[chapter.id]}}" wx:key="id" wx:for-item="item" bindtap="goVideo"
-        data-video-id="{{item.id}}">
+      <view class="video-item {{videoId == item.id ? 'active' : ''}}" wx:for="{{videos[chapter.id]}}" wx:key="id"
+        wx:for-item="item" bindtap="goVideo" data-video-id="{{item.id}}">
         <view class="name">
           <text class="free" wx:if="{{item.charge===0}}">试看</text>
           {{item.title}}
