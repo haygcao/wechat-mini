@@ -12,7 +12,7 @@
 	<swiper indicator-dots="true" autoplay="true" indicator-color="rgba(0,0,0,.2)"
 		indicator-active-color="rgba(255,255,255,1)">
 		<swiper-item wx:for="{{sliders}}" wx:for-item="slider" wx:key="id">
-			<image class="swiper-image-item" src="{{slider.thumb}}" />
+			<image class="swiper-image-item" src="{{slider.thumb}}" bindtap="goPage" data-page="{{slider.url}}" />
 		</swiper-item>
 	</swiper>
 </view>

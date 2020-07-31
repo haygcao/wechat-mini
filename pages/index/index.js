@@ -83,5 +83,13 @@ Page({
     wx.navigateTo({
       url: '/pages/search/search',
     })
+  },
+
+  goPage(e) {
+    let page = e.currentTarget.dataset.page;
+    console.log(page);
+    wx.navigateTo({
+      url: page,
+    })
   }
 })

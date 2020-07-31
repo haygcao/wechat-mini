@@ -1,4 +1,5 @@
 const baseUrl = 'http://192.168.1.2:8000'
+// const baseUrl = 'https://all.meedu.tech'
 
 export default function instance(params) {
   return new Promise((resolve, reject) => {
