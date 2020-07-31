@@ -1,7 +1,7 @@
 
 <view class="login-button-box">
-  <button wx:if="{{canIUse}}" open-type="getPhoneNumber" bindgetphonenumber="bindGetUserInfo" class="login-button">授权登录</button>
-  <view wx:else>请升级微信版本</view>
+  <button wx:if="{{step1}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login-button">微信授权</button>
+  <button wx:if="{{step2}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="login-button">绑定手机号</button>
 </view>
 
 <view class="protocol">
