@@ -16,7 +16,8 @@
 
 <view class="menus" hidden="{{navTab!=='menu'}}">
   <block wx:if="{{chapters.length === 0}}">
-    <view class="video-item" wx:for="{{videos[0]}}" wx:key="id" wx:for-item="item" bindtap="goVideo" data-video-id="{{item.id}}">
+    <view class="video-item" wx:for="{{videos[0]}}" wx:key="id" wx:for-item="item" bindtap="goVideo"
+      data-video-id="{{item.id}}">
       <view class="name">
         <text class="free" wx:if="{{item.charge===0}}">试看</text>
         {{item.title}}
@@ -28,7 +29,8 @@
   <block wx:else>
     <view class="chapter-item" wx:for="{{chapters}}" wx:key="id" wx:for-item="chapter">
       <view class="chapter-name">{{chapter.title}}</view>
-      <view class="video-item" wx:for="{{videos[chapter.id]}}" wx:key="id" wx:for-item="item" bindtap="goVideo" data-video-id="{{item.id}}">
+      <view class="video-item" wx:for="{{videos[chapter.id]}}" wx:key="id" wx:for-item="item" bindtap="goVideo"
+        data-video-id="{{item.id}}">
         <view class="name">
           <text class="free" wx:if="{{item.charge===0}}">试看</text>
           {{item.title}}
@@ -70,8 +72,13 @@
       <text class="start-learn-button">开始学习</text>
     </block>
     <block wx:else>
-      <text class="buy-button">购买课程 ￥{{course.charge}}</text>
-      <text class="buy-role-button" bindtap="goRole">开通会员免费看</text>
+      <block wx:if="{{isIos}}">
+        <view class="ios-alert">因苹果政策原因无法购买课程</view>
+      </block>
+      <block wx:else>
+        <text class="buy-button" bindtap="buy">购买课程 ￥{{course.charge}}</text>
+        <text class="buy-role-button" bindtap="goRole">开通会员免费看</text>
+      </block>
     </block>
   </view>
 </view>

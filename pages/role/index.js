@@ -1,7 +1,9 @@
 import {
   user,
   role
-} from '../../api/index';
+} from '../../api/index'
+
+import util from '../../utils/util'
 
 Page({
 
@@ -15,7 +17,8 @@ Page({
       id: 0,
       name: '',
       total: 0
-    }
+    },
+    isIos: util.isIos()
   },
 
   /**

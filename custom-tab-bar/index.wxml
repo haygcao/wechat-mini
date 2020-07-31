@@ -1,7 +1,8 @@
 <view class="tabbar">
   <view class="tabbar-item" data-active="index" bindtap="switch">
     <view class="icon">
-      <image src="../images/icons/home.png"/>
+      <image src="../images/icons/home-active.png" wx:if="{{active==='index'}}"/>
+      <image src="../images/icons/home.png" wx:else/>
     </view>
     <view class="name">
       <text>首页</text>
@@ -9,7 +10,8 @@
   </view>
   <view class="tabbar-item" data-active="course" bindtap="switch">
     <view class="icon">
-      <image src="../images/icons/course.png"/>
+      <image src="../images/icons/course-active.png" wx:if="{{active==='course'}}"/>
+      <image src="../images/icons/course.png" wx:else/>
     </view>
     <view class="name">
       <text>课程</text>
@@ -17,7 +19,8 @@
   </view>
   <view class="tabbar-item" data-active="learn" bindtap="switch">
     <view class="icon">
-      <image src="../images/icons/order.png"/>
+      <image src="../images/icons/order-active.png" wx:if="{{active==='learn'}}"/>
+      <image src="../images/icons/order.png" wx:else/>
     </view>
     <view class="name">
       <text>学习</text>
@@ -25,7 +28,8 @@
   </view>
   <view class="tabbar-item" data-active="member" bindtap="switch">
     <view class="icon">
-      <image src="../images/icons/user.png"/>
+      <image src="../images/icons/user-active.png" wx:if="{{active==='member'}}"/>
+      <image src="../images/icons/user.png" wx:else/>
     </view>
     <view class="name">
       <text>我的</text>

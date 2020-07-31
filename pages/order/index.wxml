@@ -1,0 +1,45 @@
+<view class="goods">
+  <view class="name">{{goods.name}}</view>
+  <view class="charge">￥{{goods.charge}}</view>
+</view>
+
+<view class="promo_code" bindtap="showPromoCodeShadow">
+  <view class="title">使用优惠码</view>
+  <view class="value">{{promo_code || '未使用'}}</view>
+</view>
+
+<view class="stat">
+  <view class="item">
+    <view class="name">原价</view>
+    <view class="value">￥{{goods.charge}}</view>
+  </view>
+  <view class="item">
+    <view class="name">优惠码抵扣</view>
+    <view class="value">-￥{{promo_code_charge}}</view>
+  </view>
+  <view class="item">
+    <view class="name">总计</view>
+    <view class="value">￥{{total - promo_code_charge}}</view>
+  </view>
+</view>
+
+<view class="bottom-bar">
+  <view class="total">
+    <text>￥{{total - promo_code_charge}}</text>
+  </view>
+  <view class="buttons">
+    <text class="pay" bindtap="paySubmit">确认支付</text>
+  </view>
+</view>
+
+<view class="promo_code_shadow_box" hidden="{{promoCodeShadowStatus===false}}">
+  <view class="promo_code_box">
+    <view class="input">
+      <input type="number" placeholder="请输入邀请码" value="{{promo_code}}" bindinput="inputPromoCode" />
+    </view>
+    <view class="check-button" bindtap="promoCodeCheck">
+      检测是否可用
+    </view>
+    <view class="cancel-button" bindtap="hidePromoCodeShadow">取消</view>
+  </view>
+</view>

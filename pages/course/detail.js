@@ -1,6 +1,8 @@
 import {
   course
-} from '../../api/index';
+} from '../../api/index'
+
+import util from '../../utils/util'
 
 Page({
 
@@ -19,7 +21,8 @@ Page({
     comments: [],
     commentUsers: [],
     courseId: 0,
-    commentContent: ''
+    commentContent: '',
+    isIos: util.isIos()
   },
 
   /**
@@ -142,16 +145,7 @@ Page({
   },
 
   goRole() {
-    if (!wx.getStorageSync('access_token')) {
-      wx.navigateTo({
-        url: '/pages/auth/login',
-      })
-      return
-    }
-
-    wx.navigateTo({
-      url: '/pages/role/index',
-    })
+    util.go('/pages/role/index', true);
   },
 
   inputCommentContent(e) {
@@ -201,8 +195,10 @@ Page({
 
   goVideo(e) {
     let videoId = e.currentTarget.dataset.videoId;
-    wx.navigateTo({
-      url: '/pages/course/video?id=' + videoId,
-    })
+    util.go('/pages/course/video?id=' + videoId, true);
+  },
+
+  buy() {
+    util.go(`/pages/order/index?id=${this.data.course.id}&total=${this.data.course.charge}&name=${this.data.course.title}&type=course`, true);
   }
 })

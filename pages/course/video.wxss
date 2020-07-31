@@ -219,6 +219,16 @@ page {
   display: flex;
 }
 
+.bottom-bar>.buttons>.ios-alert {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 12px;
+  color: #aaa;
+  line-height: 40px;
+  text-align: center;
+}
+
 .bottom-bar>.buttons>.buy-button {
   flex: 1;
   height: 40px;

@@ -122,6 +122,14 @@ page {
   background-color: white;
 }
 
+.bottom-bar>.ios-alert {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  line-height: 49px;
+}
+
 .bottom-bar>.total-charge {
   flex: 1;
   box-sizing: border-box;

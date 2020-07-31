@@ -1,6 +1,8 @@
 import {
   video
-} from '../../api/index';
+} from '../../api/index'
+
+import util from '../../utils/util'
 
 const app = getApp();
 
@@ -24,7 +26,9 @@ Page({
     commentContent: '',
     playInfo: [],
     playUrl: '',
-    poster: ''
+    poster: '',
+    lastPlaySeconds: 0,
+    isIos: util.isIos()
   },
 
   /**
@@ -211,5 +215,38 @@ Page({
     wx.redirectTo({
       url: '/pages/course/video?id=' + videoId,
     })
+  },
+
+  playEnd(e) {
+    // 播放统计
+    video.record(this.data.videoId, {
+      duration: this.data.video.duration
+    }).then(res => {
+      console.log('播放完成', res);
+    })
+  },
+
+  playTimeUpdate(e) {
+    let seconds = parseInt(e.detail.currentTime);
+    if (seconds - this.data.lastPlaySeconds > 10) {
+      this.setData({
+        lastPlaySeconds: seconds
+      });
+
+      // 播放统计
+      video.record(this.data.videoId, {
+        duration: seconds
+      }).then(res => {
+        console.log('播放进度变更', res);
+      })
+    }
+  },
+
+  buyCourse() {
+    util.go(`/pages/order/index?id=${this.data.course.id}&total=${this.data.course.charge}&name=${this.data.course.title}&type=course`, true);
+  },
+
+  buyVideo() {
+    util.go(`/pages/order/index?id=${this.data.video.id}&total=${this.data.video.charge}&name=${this.data.video.title}&type=video`, true);
   }
 })

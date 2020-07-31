@@ -25,3 +25,11 @@ export function playUrl(videoId) {
         url: `/api/v2/video/${videoId}/playinfo`
     })
 }
+
+export function record(videoId, data) {
+    return instance({
+        method: 'POST',
+        url: `/api/v2/video/${videoId}/record`,
+        data: data
+    })
+}
