@@ -212,7 +212,9 @@ Page({
 
   goVideo(e) {
     let videoId = e.currentTarget.dataset.videoId;
-    util.go('/pages/course/video?id=' + videoId, true);
+    wx.redirectTo({
+      url: '/pages/course/video?id=' + videoId,
+    })
   },
 
   playEnd(e) {
