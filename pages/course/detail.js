@@ -204,5 +204,11 @@ Page({
     wx.navigateTo({
       url: '/pages/course/video?id=' + videoId,
     })
+  },
+
+  buy() {
+    wx.navigateTo({
+      url: `/pages/order/index?id=${this.data.course.id}&total=${this.data.course.charge}&name=${this.data.course.title}&type=course`,
+    })
   }
 })

@@ -237,5 +237,17 @@ Page({
         console.log('播放进度变更', res);
       })
     }
+  },
+
+  buyCourse() {
+    wx.navigateTo({
+      url: `/pages/order/index?id=${this.data.course.id}&total=${this.data.course.charge}&name=${this.data.course.title}&type=course`,
+    })
+  },
+
+  buyVideo() {
+    wx.navigateTo({
+      url: `/pages/order/index?id=${this.data.video.id}&total=${this.data.video.charge}&name=${this.data.video.title}&type=video`,
+    })
   }
 })

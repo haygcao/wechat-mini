@@ -1,28 +1,39 @@
 import instance from './instance';
 
-export function createCourseOrder(courseId, promoCodeId) {
+export function course(courseId, promoCode) {
   return instance({
     method: 'POST',
     url: '/api/v2/order/course',
     data: {
       course_id: courseId,
-      promo_code: promoCodeId
+      promo_code: promoCode
     }
   })
 }
 
-export function creteRoleOrder(roleId, promoCodeId) {
+export function video(videoId, promoCode) {
+  return instance({
+    method: 'POST',
+    url: '/api/v2/order/video',
+    data: {
+      video_id: videoId,
+      promo_code: promoCode
+    }
+  })
+}
+
+export function role(roleId, promoCode) {
   return instance({
     method: 'POST',
     url: '/api/v2/order/role',
     data: {
       role_id: roleId,
-      promo_code: promoCodeId
+      promo_code: promoCode
     }
   })
 }
 
-export function payment(order_id) {
+export function pay(order_id) {
   return instance({
     method: 'POST',
     url: '/api/v2/order/payment/wechat/mini',
@@ -33,7 +44,7 @@ export function payment(order_id) {
   })
 }
 
-export function checkPromoCode(code) {
+export function promoCodeCheck(code) {
   return instance({
     method: 'GET',
     url: '/api/v2/promoCode/' + code + '/check',

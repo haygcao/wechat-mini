@@ -70,7 +70,7 @@
       <text class="start-learn-button">开始学习</text>
     </block>
     <block wx:else>
-      <text class="buy-button">购买课程 ￥{{course.charge}}</text>
+      <text class="buy-button" bindtap="buy">购买课程 ￥{{course.charge}}</text>
       <text class="buy-role-button" bindtap="goRole">开通会员免费看</text>
     </block>
   </view>

@@ -19,7 +19,8 @@
     "pages/member/withdraw_records",
     "pages/role/index",
     "pages/course/detail",
-    "pages/course/video"
+    "pages/course/video",
+    "pages/order/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
