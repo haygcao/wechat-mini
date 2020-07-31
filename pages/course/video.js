@@ -27,7 +27,8 @@ Page({
     playInfo: [],
     playUrl: '',
     poster: '',
-    lastPlaySeconds: 0
+    lastPlaySeconds: 0,
+    isIos: util.isIos()
   },
 
   /**

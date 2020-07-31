@@ -21,7 +21,8 @@ Page({
     comments: [],
     commentUsers: [],
     courseId: 0,
-    commentContent: ''
+    commentContent: '',
+    isIos: util.isIos()
   },
 
   /**

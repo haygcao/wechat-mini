@@ -1,3 +1,5 @@
+import util from '../../utils/util'
+
 Component({
   properties: {
     name: {
@@ -25,7 +27,9 @@ Component({
       value: 0,
     }
   },
-  data: {},
+  data: {
+    isIos: util.isIos()
+  },
   methods: {
     goDetail() {
       wx.navigateTo({

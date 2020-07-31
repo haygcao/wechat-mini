@@ -26,8 +26,13 @@
 </view>
 
 <view class="bottom-bar">
-  <view class="total-charge">
-    <text class="value">￥{{order.total}}</text>
-  </view>
-  <view class="buy-button" bindtap="buy">立即购买</view>
+  <block wx:if="{{isIos}}">
+    <view class="ios-alert">因苹果政策原因无法购买会员</view>
+  </block>
+  <block wx:else>
+    <view class="total-charge">
+      <text class="value">￥{{order.total}}</text>
+    </view>
+    <view class="buy-button" bindtap="buy">立即购买</view>
+  </block>
 </view>

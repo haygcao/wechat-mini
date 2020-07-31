@@ -14,7 +14,7 @@
         <text>{{category}}</text>
       </view>
     </view>
-    <view class="course-charge">
+    <view class="course-charge" wx:if="{{isIos === false}}">
       <text class="charge">￥{{charge}}</text>
     </view>
   </view>

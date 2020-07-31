@@ -48,9 +48,15 @@ const go = (page, auth = false) => {
   })
 }
 
+const isIos = () => {
+  let info = wx.getSystemInfoSync();
+  return info.platform === 'ios';
+}
+
 module.exports = {
   formatTime: formatTime,
   durationForHuman: durationForHuman,
   loginCheck: loginCheck,
-  go: go
+  go: go,
+  isIos: isIos
 }

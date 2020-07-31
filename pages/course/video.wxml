@@ -72,12 +72,19 @@
 <view class="hr"></view>
 
 <view class="bottom-bar" hidden="{{navTab === 'comment'}}" wx:if="{{isBuy === false}}">
-  <view class="buttons" wx:if="{{video.charge === 0}}">
-    <text class="buy-button" bindtap="buyCourse">购买课程 ￥{{course.charge}}</text>
-  </view>
-  <view class="buttons" wx:else>
-    <text class="buy-button" bindtap="buyCourse">购买课程 ￥{{course.charge}}</text>
-    <text class="buy-video-button" bindtap="buyVideo">购买此视频 ￥{{video.charge}}</text>
+  <view class="buttons">
+    <block wx:if="{{isIos}}">
+      <view class="ios-alert">因苹果政策原因无法购买课程</view>
+    </block>
+    <block wx:else>
+      <block wx:if="{{video.charge === 0}}">
+        <text class="buy-button" bindtap="buyCourse">购买课程 ￥{{course.charge}}</text>
+      </block>
+      <block wx:else>
+        <text class="buy-button" bindtap="buyCourse">购买课程 ￥{{course.charge}}</text>
+        <text class="buy-video-button" bindtap="buyVideo">购买此视频 ￥{{video.charge}}</text>
+      </block>
+    </block>
   </view>
 </view>
 
