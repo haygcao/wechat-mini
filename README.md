@@ -3,12 +3,12 @@
 
 ## 链接
 
-- [官网](https://meedu.vip)
-- [插件商城](https://meedu.vip/addons)
++ [官网](https://meedu.vip)
++ [插件商城](https://meedu.vip/addons)
 
 ## FAQ
 
-[安装教程](https://www.yuque.com/meedu/foyrg7/zn927m)
++ [安装教程](https://www.yuque.com/meedu/foyrg7/zn927m)
 
 ## LICENSE
 
