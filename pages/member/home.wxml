@@ -74,7 +74,7 @@
     </view>
     <view class="text" wx:else>
       <text>开通会员享更多课程特权</text>
-      <text class="detail">了解详情</text>
+      <text class="detail" bindtap="goPage" data-page="/pages/role/index">了解详情</text>
     </view>
   </view>
 
