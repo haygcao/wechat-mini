@@ -1,6 +1,7 @@
 import {
   user
 } from '../../api/index'
+import util from '../../utils/util'
 
 Page({
 
@@ -84,8 +85,6 @@ Page({
 
   goPage(e) {
     let page = e.currentTarget.dataset.page;
-    wx.navigateTo({
-      url: page,
-    })
+    util.go(page, true)
   }
 })

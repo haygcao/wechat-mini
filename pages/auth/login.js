@@ -10,13 +10,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    redirect: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let redirect = options.redirect;
+    if (redirect) {
+      redirect = decodeURIComponent(redirect);
+      this.setData({
+        redirect: redirect
+      })
+    }
   },
 
   /**
@@ -80,9 +88,15 @@ Page({
     }).then(res => {
       wx.setStorageSync('access_token', res.token);
 
-      wx.navigateBack({
-        delta: 0,
-      })
+      if (this.data.redirect) {
+        wx.redirectTo({
+          url: this.data.redirect,
+        })
+      } else {
+        wx.navigateBack({
+          delta: 0,
+        })
+      }
     })
   },
 

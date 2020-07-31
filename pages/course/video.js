@@ -1,6 +1,8 @@
 import {
   video
-} from '../../api/index';
+} from '../../api/index'
+
+import util from '../../utils/util'
 
 const app = getApp();
 
@@ -209,9 +211,7 @@ Page({
 
   goVideo(e) {
     let videoId = e.currentTarget.dataset.videoId;
-    wx.redirectTo({
-      url: '/pages/course/video?id=' + videoId,
-    })
+    util.go('/pages/course/video?id=' + videoId, true);
   },
 
   playEnd(e) {
@@ -240,14 +240,10 @@ Page({
   },
 
   buyCourse() {
-    wx.navigateTo({
-      url: `/pages/order/index?id=${this.data.course.id}&total=${this.data.course.charge}&name=${this.data.course.title}&type=course`,
-    })
+    util.go(`/pages/order/index?id=${this.data.course.id}&total=${this.data.course.charge}&name=${this.data.course.title}&type=course`, true);
   },
 
   buyVideo() {
-    wx.navigateTo({
-      url: `/pages/order/index?id=${this.data.video.id}&total=${this.data.video.charge}&name=${this.data.video.title}&type=video`,
-    })
+    util.go(`/pages/order/index?id=${this.data.video.id}&total=${this.data.video.charge}&name=${this.data.video.title}&type=video`, true);
   }
 })

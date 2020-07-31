@@ -35,8 +35,22 @@ const loginCheck = () => {
   }
 }
 
+const go = (page, auth = false) => {
+  if (auth && !wx.getStorageSync('access_token')) {
+    wx.navigateTo({
+      url: '/pages/auth/login?redirect=' + encodeURIComponent(page),
+    })
+    return
+  }
+
+  wx.navigateTo({
+    url: page,
+  })
+}
+
 module.exports = {
   formatTime: formatTime,
   durationForHuman: durationForHuman,
-  loginCheck: loginCheck
+  loginCheck: loginCheck,
+  go: go
 }
