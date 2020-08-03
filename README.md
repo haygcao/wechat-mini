@@ -1,4 +1,4 @@
-<p align="center"><img src="doc/images/demo.png"/></p>
+<p align="center"><img src="doc/images/wechat.png"/></p>
 <p align="center">weni - MeEdu 微信小程序客户端。</p>
 
 ## 链接
