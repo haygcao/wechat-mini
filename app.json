@@ -9,7 +9,6 @@
     "pages/course/list",
     "pages/member/setting",
     "pages/common/web",
-    "pages/learn/index",
     "pages/member/order",
     "pages/member/collect",
     "pages/member/message",
@@ -20,7 +19,8 @@
     "pages/role/index",
     "pages/course/detail",
     "pages/course/video",
-    "pages/order/index"
+    "pages/order/index",
+    "pages/member/course"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,10 +39,6 @@
       {
         "pagePath": "pages/course/list",
         "text": "课程"
-      },
-      {
-        "pagePath": "pages/learn/index",
-        "text": "学习"
       },
       {
         "pagePath": "pages/member/home",
