@@ -1,21 +1,19 @@
-<scroll-view class="scroll-box" scroll-y="true" bindscrolltolower="loadMore">
-  <view class="messages-list-box">
-    <block wx:if="{{messages.length > 0}}">
-      <view class="item" wx:for="{{messages}}" wx:for-item="message" wx:for-index="index" wx:key="id" bindtap="markRead" data-index="{{index}}" data-read="{{message.read_at}}" data-id="{{message.id}}">
-        <view class="icon">
-          <image src="../../images/icons/message/default.png" />
+<view class="messages-list-box">
+  <block wx:if="{{messages.length > 0}}">
+    <view class="item" wx:for="{{messages}}" wx:for-item="message" wx:for-index="index" wx:key="id" bindtap="markRead" data-index="{{index}}" data-read="{{message.read_at}}" data-id="{{message.id}}">
+      <view class="icon">
+        <image src="../../images/icons/message/default.png" />
+      </view>
+      <view class="content">
+        <view class="date">
+          <text class="value">{{message.created_at}}</text>
+          <text class="dot" wx:if="{{message.read_at === null}}"></text>
         </view>
-        <view class="content">
-          <view class="date">
-            <text class="value">{{message.created_at}}</text>
-            <text class="dot" wx:if="{{message.read_at === null}}"></text>
-          </view>
-          <view class="text">
-            {{message.data.message}}
-          </view>
+        <view class="text">
+          {{message.data.message}}
         </view>
       </view>
-    </block>
-    <meedu-none wx:else></meedu-none>
-  </view>
-</scroll-view>
+    </view>
+  </block>
+  <meedu-none wx:else></meedu-none>
+</view>

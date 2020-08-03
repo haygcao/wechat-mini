@@ -17,15 +17,6 @@
       <text>课程</text>
     </view>
   </view>
-  <view class="tabbar-item" data-active="learn" bindtap="switch">
-    <view class="icon">
-      <image src="../images/icons/order-active.png" wx:if="{{active==='learn'}}"/>
-      <image src="../images/icons/order.png" wx:else/>
-    </view>
-    <view class="name">
-      <text>学习</text>
-    </view>
-  </view>
   <view class="tabbar-item" data-active="member" bindtap="switch">
     <view class="icon">
       <image src="../images/icons/user-active.png" wx:if="{{active==='member'}}"/>

@@ -112,6 +112,11 @@ Page({
   createPromoCode() {
     user.createPromoCode().then(res => {
       this.getPromoCode();
+    }).catch(e => {
+      wx.showToast({
+        icon: 'none',
+        title: e,
+      })
     })
   },
 

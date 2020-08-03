@@ -9,8 +9,7 @@ Page({
     tabs: {
       index: '/pages/index/index',
       member: '/pages/member/home',
-      course: '/pages/course/list',
-      learn: '/pages/learn/index'
+      course: '/pages/course/list'
     }
   },
 

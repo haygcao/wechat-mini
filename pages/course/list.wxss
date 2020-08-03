@@ -1,19 +1,28 @@
 .course-category-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 11;
+  width: 100%;
   height: 30px;
-  box-sizing: border-box;
   padding-top: 5px;
+  padding-bottom: 5px;
+  float: left;
   white-space: nowrap;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 #f2f2f2;
 }
 
 .category-item {
-  display: inline;
+  display: inline-block;
   font-size: 14px;
-  padding: 0 15px;
+  padding: 2px 15px;
+  margin-right: 10px;
+}
+
+.category-item.first {
   margin-left: 10px;
 }
 
@@ -23,20 +32,13 @@
   color: white;
 }
 
-.course-container {
-  position: fixed;
-  top: 40px;
-  left: 0;
-  right: 0;
-  bottom: 50px;
-  z-index: 11;
-}
-
 .course-list {
   width: 100%;
   height: auto;
   float: left;
+  margin-top: 40px;
   box-sizing: border-box;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 50px;
 }

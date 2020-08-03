@@ -1,24 +1,22 @@
-<scroll-view class="scroll-box" scroll-y="true" bindscrolltolower="loadMore">
-  <view class="orders-list-box">
-    <block wx:if="{{orders.length > 0}}">
-      <view class="item" wx:for="{{orders}}" wx:key="id" wx:for-item="order">
-        <view class="info">
-          <view class="date">{{order.created_at}}</view>
-          <view class="status {{order.status_text !== '已支付' ? 'red' : ''}}">
-            {{order.status_text}}
-          </view>
-        </view>
-        <view class="goods">
-          <view class="name">
-            <view class="text">{{order.goods[0].goods_text}}</view>
-            <view class="payment">{{order.payment_text}}</view>
-          </view>
-          <view class="charge">
-            <text class="value">￥{{order.charge}}</text>
-          </view>
+<view class="orders-list-box">
+  <block wx:if="{{orders.length > 0}}">
+    <view class="item" wx:for="{{orders}}" wx:key="id" wx:for-item="order">
+      <view class="info">
+        <view class="date">{{order.created_at}}</view>
+        <view class="status {{order.status_text !== '已支付' ? 'red' : ''}}">
+          {{order.status_text}}
         </view>
       </view>
-    </block>
-    <meedu-none wx:else></meedu-none>
-  </view>
-</scroll-view>
+      <view class="goods">
+        <view class="name">
+          <view class="text">{{order.goods[0].goods_text}}</view>
+          <view class="payment">{{order.payment_text}}</view>
+        </view>
+        <view class="charge">
+          <text class="value">￥{{order.charge}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <meedu-none wx:else></meedu-none>
+</view>
