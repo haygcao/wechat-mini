@@ -77,8 +77,16 @@ Page({
   },
 
   getUserInfo(e) {
-    let data = e.detail;
+    if (e.detail.errMsg !== 'getUserInfo:ok') {
+      wx.showToast({
+        icon: 'none',
+        title: '您拒绝了授权',
+      })
+      return
+    }
 
+    let data = e.detail;
+    // 缓存用户信息后面手机号登录用得到
     this.setData({
       userInfo: data
     });
