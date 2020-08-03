@@ -16,6 +16,7 @@
 ## FAQ
 
 + [使用教程](https://www.yuque.com/meedu/foyrg7/zn927m)
++ [后端API接口由 MeEdu 提供](https://github.com/Qsnh/meedu)
 
 ## LICENSE
 
