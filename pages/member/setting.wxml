@@ -6,3 +6,7 @@
 <view class="setting-box">
   <view class="item last" bindtap="openAboutUs">关于我们</view>
 </view>
+
+<view class="setting-box">
+  <view class="item last">小程序版本 v2.0.2-beta</view>
+</view>
