@@ -1,16 +1,14 @@
-<scroll-view class="scroll-box" scroll-y="true" bindscrolltolower="loadMore">
-  <view class="records-box">
-    <block wx:if="{{records.length > 0}}">
-      <view class="item" wx:for="{{records}}" wx:key="id" wx:for-item="record">
-        <view class="content">
-          <view class="remark">{{record.status_text}}</view>
-          <view class="date">{{record.created_at}}</view>
-        </view>
-        <view class="sum">
-          ￥{{record.total}}
-        </view>
+<view class="records-box">
+  <block wx:if="{{records.length > 0}}">
+    <view class="item" wx:for="{{records}}" wx:key="id" wx:for-item="record">
+      <view class="content">
+        <view class="remark">{{record.status_text}}</view>
+        <view class="date">{{record.created_at}}</view>
       </view>
-    </block>
-    <meedu-none wx:else></meedu-none>
-  </view>
-</scroll-view>
+      <view class="sum">
+        ￥{{record.total}}
+      </view>
+    </view>
+  </block>
+  <meedu-none wx:else></meedu-none>
+</view>
