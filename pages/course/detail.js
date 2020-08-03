@@ -200,5 +200,27 @@ Page({
 
   buy() {
     util.go(`/pages/order/index?id=${this.data.course.id}&total=${this.data.course.charge}&name=${this.data.course.title}&type=course`, true);
+  },
+
+  startLearn() {
+    if (this.data.videos.length === 0) {
+      wx.showToast({
+        icon: 'none',
+        title: '暂无视频',
+      })
+      return
+    }
+
+    let video = null;
+
+    if (this.data.chapters.length > 0) {
+      // 有配置章节
+      video = this.data.videos[this.data.chapters[0].id][0];
+    } else {
+      // 无章节
+      video = this.data.videos[0][0];
+    }
+
+    util.go('/pages/course/video?id=' + video.id, true);
   }
 })

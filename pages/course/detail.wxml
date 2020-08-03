@@ -69,7 +69,7 @@
   </view>
   <view class="buttons">
     <block wx:if="{{course.charge === 0 || isBuy === true}}">
-      <text class="start-learn-button">开始学习</text>
+      <text class="start-learn-button" bindtap="startLearn">开始学习</text>
     </block>
     <block wx:else>
       <block wx:if="{{isIos}}">
